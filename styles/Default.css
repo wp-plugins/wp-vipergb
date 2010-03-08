@@ -1,0 +1,91 @@
+
+/***************************************************/
+/*               "Show Guestbook" Page             */
+/***************************************************/
+#gbHeader{
+    float:left;
+    width:100%;
+    margin-bottom:10px;    
+}
+
+#gbPageLinks{
+    float:right;
+}
+
+#gbNavLinks{
+    float:left;
+}
+
+#gbEntriesWrap, #gbNoEntriesWrap{
+    clear:both;
+}
+
+.gbEntry{
+    width:100%;
+    padding:0;
+    margin-bottom: 7px;
+    border:1px solid #888888;
+}
+
+.gbEntryTop{
+    width:80%
+}
+
+.gbEntryLeft{
+    height:100%;
+    padding:0 3px;
+    vertical-align:top;
+    text-align:center;
+    border-right:1px solid #888888;
+}
+
+.gbEntryContent{
+    padding:0 4px;
+}
+
+.gbAuthor{
+    float:left;
+    vertical-align:middle;
+}
+
+.gbFlagAndBrowser{
+    float:right;
+    padding-right:3px;
+    margin-top:3px;
+}
+
+/***************************************************/
+/*              "Sign Guestbook" Page              */
+/***************************************************/
+#gbSignWrap{
+    width: 400px;
+    margin-top: 30px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 5px;
+    clear:both;
+    border:1px solid #888888;
+}
+
+#gbSignPersonal{
+    margin-top:5px;
+}
+
+#gbSignPersonal #email, #gbSignPersonal #author, #gbSignPersonal #url{
+    width:200px;
+}
+
+#gbSignText{
+    margin-top: 10px;
+    text-align:center;
+}
+
+#gbSignUpload{
+    margin:10px 0;
+    text-align:center;
+}
+
+#gbSignUploadedFile{
+    width:100%;
+    margin: 5px 0;
+}
