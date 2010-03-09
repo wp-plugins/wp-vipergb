@@ -42,7 +42,7 @@ For a Demo, see the [plugin's homepage](http://www.justin-klein.com/projects/wp-
 
 6. Click "Save," and you're done! You can now enjoy your new guestbook.
 
-Customization options are discussed on the [plugin's website](http://www.justin-klein.com/projects/wp-vipergb#customizing).
+Customization options are discussed on the [plugin's website](http://www.justin-klein.com/projects/wp-vipergb#customization).
 
 == Frequently Asked Questions ==
 
