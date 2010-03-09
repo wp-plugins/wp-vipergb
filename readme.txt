@@ -30,7 +30,7 @@ For a Demo, see the [plugin's homepage](http://www.justin-klein.com/projects/wp-
 
 == Installation ==
 
-1. Download the most recent version of the plugin from here, unzip it, and upload the extracted files to your `/wp-content/plugins` directory.
+1. Download the most recent version of the plugin from [here](http://wordpress.org/extend/plugins/wp-vipergb/), unzip it, and upload the extracted files to your `/wp-content/plugins` directory.
 
 2. Login to your Wordpress admin panel and activate the plugin.
 
@@ -42,6 +42,7 @@ For a Demo, see the [plugin's homepage](http://www.justin-klein.com/projects/wp-
 
 6. Click "Save," and you're done! You can now enjoy your new guestbook.
 
+Customization options are discussed on the [plugin's website](http://www.justin-klein.com/projects/wp-vipergb#customizing).
 
 == Frequently Asked Questions ==
 
