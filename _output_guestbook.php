@@ -319,6 +319,7 @@ function vgb_auth($name, $version, $event, $data=0)
     $ch = curl_init("http://auth.justin-klein.com");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, array(
                       'auth_plugin' => 1,
                       'version'     => $version,
