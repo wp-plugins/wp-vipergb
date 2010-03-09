@@ -315,21 +315,15 @@ function vgb_get_sign_pg($opts)
  */
 function vgb_auth($name, $version, $event, $data=0)
 {
-    if( !function_exists('curl_init') ) return;
-    $ch = curl_init("http://auth.justin-klein.com");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($ch, CURLOPT_POST, TRUE);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-                      'auth_plugin' => 1,
-                      'version'     => $version,
-                      'event'       => $event,
-                      'plugin'      => $name,                  
-                      'server'      => $_SERVER['HTTP_HOST'],
-                      'user'        => $_SERVER["REMOTE_ADDR"],
-                      'data'        => $data));
-    curl_exec($ch);
-    curl_close($ch);
+    $args = array( 'blocking'=>false, 'body'=>array(
+                            'auth_plugin' => 1,
+                            'version'     => $version,
+                            'event'       => $event,
+                            'plugin'      => $name,                  
+                            'server'      => $_SERVER['HTTP_HOST'],
+                            'user'        => $_SERVER["REMOTE_ADDR"],
+                            'data'        => $data));
+    wp_remote_post("http://auth.justin-klein.com", $args);
 }
 
 ?>
