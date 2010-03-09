@@ -6,12 +6,12 @@ add_option($opt_vgb_max_upload_siz, 50);
 add_option($opt_vgb_show_browsers, true);
 add_option($opt_vgb_show_flags, true);
 add_option($opt_vgb_style, "Default");
-
+add_option($opt_vgb_show_cred_link, false);
 
 /*
  * Tell WP about the Admin page
  */
-add_action('admin_menu', 'vgb_add_admin_page');
+add_action('admin_menu', 'vgb_add_admin_page', 99);
 function vgb_add_admin_page()
 { 
     add_options_page('WP-ViperGB Options', 'WP-ViperGB', 'administrator', "wp-vipergb", 'vgb_admin_page');
@@ -34,9 +34,10 @@ function vgb_add_plugin_links($links, $file)
  */
 function vgb_admin_page()
 {
+    global $vgb_homepage;
     global $opt_vgb_page, $opt_vgb_style, $opt_vgb_reverse, $opt_vgb_allow_upload;
     global $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
-    global $opt_vgb_show_browsers, $opt_vgb_show_flags;
+    global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
     ?>
     <div class="wrap">
       <?
@@ -50,6 +51,7 @@ function vgb_admin_page()
           update_option( $opt_vgb_max_upload_siz, $_POST[$opt_vgb_max_upload_siz] );
           update_option( $opt_vgb_show_browsers, $_POST[$opt_vgb_show_browsers] );
           update_option( $opt_vgb_show_flags, $_POST[$opt_vgb_show_flags] );
+          update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
           ?><div class="updated"><p><strong><?php _e('Options saved.', 'mt_trans_domain' ); ?></strong></p></div><?
       }
       ?>
@@ -95,7 +97,8 @@ function vgb_admin_page()
         <input type="checkbox" name="<?=$opt_vgb_allow_upload?>" value="1" <?= get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
         <input type="text" size="3" name="<?=$opt_vgb_max_upload_siz?>" value="<?= get_option($opt_vgb_max_upload_siz) ?>" /> Max Image Filesize (kb)<br /><br />
         <input type="checkbox" name="<?=$opt_vgb_show_browsers?>" value="1" <?= get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> Show Browser &amp; OS Icons<br />
-        <input type="checkbox" name="<?=$opt_vgb_show_flags?>" value="1" <?= get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br />
+        <input type="checkbox" name="<?=$opt_vgb_show_flags?>" value="1" <?= get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br /><br />
+        <input type="checkbox" name="<?=$opt_vgb_show_cred_link?>" value="1" <?= get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> Include a Link to the <a href="<?=$vgb_homepage?>">plugin homepage</a> (optional, but much appreciated)<br />
         <input type="hidden" name="opts_updated" value="1" />
         <div class="submit"><input type="submit" name="Submit" value="Save" /></div>
       </form>

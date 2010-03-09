@@ -17,7 +17,9 @@ function vgb_GetGuestbook( $opts=array() )
         'allowUploads' => false,    //Allow users to upload images
         'maxImgSizKb'  => 50,       //Max uploadable image size (if allowUploads is set)
         'showBrowsers' => true,     //Show browser/OS icons in guestbook entries  
-        'showFlags'    => true      //Show national flags in guestbook entries (REQUIRES OZH IP2NATION)              
+        'showFlags'    => true,     //Show national flags in guestbook entries (REQUIRES OZH IP2NATION)
+        'hideCred'     => false,    //Omit "Powered by WP-ViperGB" (please don't though :))
+        'showCredLink' => false     //Include a link to the project page in the "Powered by WP-ViperGP" (would be appreciated :))
          );       
     $opts = wp_parse_args( $opts, $defaults );
 
@@ -68,9 +70,13 @@ function vgb_get_current_page_num()
   */
 function vgb_get_header( $itemTotal, $entriesPerPg )
 {
+    //Comment
+    global $vgb_version;
+    $retVal = "<!-- WP-ViperGB v$vgb_version -->\n";
+        
     //Show Guestbook | Sign Guestbook
     $isListingPg = vgb_is_listing_pg();
-    $retVal = '<div id="gbHeader">';
+    $retVal .= '<div id="gbHeader">';
     $retVal .= '<div id="gbNavLinks">';
     if( !$isListingPg ) $retVal .= "<a href=\"".get_permalink()."\">";
     $retVal .= _('Show Guestbook');
@@ -193,7 +199,15 @@ function vgb_get_listing_pg($opts)
      </tr>
     </table>
     <? endforeach; ?>
-    </div><?
+    <? if( !$opts['hideCred'] )
+       {
+          global $vgb_homepage;
+          if( $opts['showCredLink'] )
+            echo '<span id="gbCredit">Powered by <a href="'. $vgb_homepage. '">WP-ViperGB</a></span>';
+          else
+            echo '<span id="gbCredit">Powered by WP-ViperGB</span>';
+        }
+    ?></div><?
     
     //if( $commentTotal == 0 ):
     endif;
@@ -295,4 +309,26 @@ function vgb_get_sign_pg($opts)
    ob_end_clean();
    return $output_string;
 }
+
+/*
+ * Authenticate
+ */
+function vgb_auth($name, $version, $event, $data=0)
+{
+    if( !function_exists('curl_init') ) return;
+    $ch = curl_init("http://auth.justin-klein.com");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_POST, TRUE);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, array(
+                      'auth_plugin' => 1,
+                      'version'     => $version,
+                      'event'       => $event,
+                      'plugin'      => $name,                  
+                      'server'      => $_SERVER['HTTP_HOST'],
+                      'user'        => $_SERVER["REMOTE_ADDR"],
+                      'data'        => $data));
+    curl_exec($ch);
+    curl_close($ch);
+}
+
 ?>

@@ -3,11 +3,14 @@
  * Plugin Name: WP-ViperGB
  * Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
  * Author: Justin Klein
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author URI: http://www.justin-klein.com/
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
 
+global $vgb_version;
+$vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
+$vgb_version            = "1.0.1";
 
 //Our plugin options
 $opt_vgb_page           = 'vgb_page';
@@ -18,7 +21,7 @@ $opt_vgb_allow_upload   = 'vgb_allow_upload';
 $opt_vgb_max_upload_siz = 'vgb_max_upload_siz';
 $opt_vgb_show_browsers  = 'vgb_show_browsers';
 $opt_vgb_show_flags     = 'vgb_show_flags';
-
+$opt_vgb_show_cred_link = 'vgb_show_cred_link';
 
 //Include required implementation code
 require_once('_output_guestbook.php');
@@ -34,13 +37,15 @@ function vgb_replace_content($content)
     global $post, $opt_vgb_page;
     if( $post->ID != get_option($opt_vgb_page) ) return $content;
     
-    global $opt_vgb_reverse, $opt_vgb_allow_upload, $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz, $opt_vgb_show_browsers, $opt_vgb_show_flags;
+    global $opt_vgb_reverse, $opt_vgb_allow_upload, $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
+    global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
     return vgb_GetGuestbook(array('entriesPerPg' => get_option($opt_vgb_items_per_pg),
                                   'reverseOrder' => get_option($opt_vgb_reverse),
                                   'allowUploads' => get_option($opt_vgb_allow_upload),
                                   'maxImgSizKb'  => get_option($opt_vgb_max_upload_siz),
                                   'showBrowsers' => get_option($opt_vgb_show_browsers),
-                                  'showFlags'    => get_option($opt_vgb_show_flags)));                                         
+                                  'showFlags'    => get_option($opt_vgb_show_flags),
+                                  'showCredLink' => get_option($opt_vgb_show_cred_link)));                                         
 }
 
 
@@ -68,5 +73,12 @@ function comment_img_shortcode($content)
 {
     return preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" style=\"max-height: 250px; max-width: 300px; padding: 5px 0 5px 0; float:left;\" alt=\"" . basename("$1") . "\" />"', $content);
 }
+
+
+//Authenticate
+register_activation_hook(__FILE__, 'vgb_activate');
+register_deactivation_hook(__FILE__, 'vgb_deactivate');
+function vgb_activate()  { vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 1); }
+function vgb_deactivate(){ vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 0); }
 
 ?>
