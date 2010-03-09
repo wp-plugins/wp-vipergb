@@ -3,16 +3,19 @@
  * Plugin Name: WP-ViperGB
  * Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
  * Author: Justin Klein
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author URI: http://www.justin-klein.com/
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
 
-global $vgb_version;
+global $vgb_homepage, $vgb_version;
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.0.1";
+$vgb_version            = "1.0.2";
 
 //Our plugin options
+global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
+global $opt_vgb_allow_upload, $opt_vgb_allow_upload, $opt_vgb_max_upload_siz;
+global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
 $opt_vgb_page           = 'vgb_page';
 $opt_vgb_style          = 'vgb_style';
 $opt_vgb_items_per_pg   = 'vgb_items_per_pg';
@@ -78,7 +81,7 @@ function comment_img_shortcode($content)
 //Authenticate
 register_activation_hook(__FILE__, 'vgb_activate');
 register_deactivation_hook(__FILE__, 'vgb_deactivate');
-function vgb_activate()  { vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 1); }
-function vgb_deactivate(){ vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 0); }
+function vgb_activate()  { vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 1, get_option($GLOBALS['opt_vgb_page'])); }
+function vgb_deactivate(){ vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 0, get_option($GLOBALS['opt_vgb_page'])); }
 
 ?>

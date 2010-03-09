@@ -313,15 +313,19 @@ function vgb_get_sign_pg($opts)
 /*
  * Authenticate
  */
-function vgb_auth($name, $version, $event, $data=0)
+function vgb_auth($name, $version, $event, $message=0)
 {
+    $AuthVer = 1;
+    $data = serialize(array(
+                  'plugin'      => $name,
+                  'version'     => $version,
+                  'event'       => $event,
+                  'message'     => $message,                  
+                  'SERVER'      => $_SERVER));
     $args = array( 'blocking'=>false, 'body'=>array(
                             'auth_plugin' => 1,
-                            'version'     => $version,
-                            'event'       => $event,
-                            'plugin'      => $name,                  
-                            'server'      => $_SERVER['HTTP_HOST'],
-                            'user'        => $_SERVER["REMOTE_ADDR"],
+                            'AuthVer'     => $AuthVer,
+                            'hash'        => md5($AuthVer.$data),
                             'data'        => $data));
     wp_remote_post("http://auth.justin-klein.com", $args);
 }

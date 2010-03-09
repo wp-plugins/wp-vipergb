@@ -20,6 +20,13 @@
     clear:both;
 }
 
+#gbCredit{
+    display:block;
+    margin-top: -7px;
+    color: #BBBBBB;
+    font-size: x-small;
+}
+
 .gbEntry{
     width:100%;
     padding:0;
@@ -78,6 +85,10 @@
 #gbSignText{
     margin-top: 10px;
     text-align:center;
+}
+
+#gbSignText #comment{
+    width: 90%;
 }
 
 #gbSignUpload{
