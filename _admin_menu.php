@@ -96,7 +96,7 @@ function vgb_admin_page()
         <h4>Optional Settings:</h4>
         <input type="checkbox" name="<?=$opt_vgb_reverse?>" value="1" <?= get_option($opt_vgb_reverse)?'checked="checked"':''?> /> Reverse Order (list from oldest to newest)<br />
         <input type="text" size="3" name="<?=$opt_vgb_items_per_pg?>" value="<?= get_option($opt_vgb_items_per_pg) ?>" /> Entries Per Page<br /><br />
-        <input type="checkbox" name="<?=$opt_vgb_allow_upload?>" value="1" <?= get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
+        <input type="checkbox" name="<?=$opt_vgb_allow_upload?>" value="1" <?= get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads (<a href="http://www.justin-klein.com/projects/wp-vipergb#comment-10608">Temporarily not working</a> on Windows servers)<br />
         <input type="text" size="3" name="<?=$opt_vgb_max_upload_siz?>" value="<?= get_option($opt_vgb_max_upload_siz) ?>" /> Max Image Filesize (kb)<br /><br />
         <input type="checkbox" name="<?=$opt_vgb_show_browsers?>" value="1" <?= get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> Show Browser &amp; OS Icons<br />
         <input type="checkbox" name="<?=$opt_vgb_show_flags?>" value="1" <?= get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br /><br />
