@@ -64,10 +64,10 @@ function suppress_comments( $file )
 
 
 //Add some styles
-wp_enqueue_style('WP-ViperGB-Default', vgb_get_data_url().'styles/Default.css' );
+wp_enqueue_style('WP-ViperGB-Default', vgb_get_data_url().'styles/Default.css', array(), $vgb_version );
 $currentStyle = get_option($opt_vgb_style);
 if( $currentStyle != 'Default' )
-    wp_enqueue_style('WP-ViperGB-'.$currentStyle, vgb_get_data_url().'styles/'.$currentStyle.".css" );
+    wp_enqueue_style('WP-ViperGB-'.$currentStyle, vgb_get_data_url().'styles/'.$currentStyle.".css", array('WP-ViperGB-Default'), $vgb_version );
 
 
 //Add support for [img] shortcode in comments (for user-uploaded images)
