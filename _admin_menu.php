@@ -34,7 +34,7 @@ function vgb_add_plugin_links($links, $file)
  */
 function vgb_admin_page()
 {
-    global $vgb_homepage;
+    global $vgb_homepage, $vgb_version;
     global $opt_vgb_page, $opt_vgb_style, $opt_vgb_reverse, $opt_vgb_allow_upload;
     global $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
@@ -43,6 +43,8 @@ function vgb_admin_page()
       <?
       if( isset($_POST['opts_updated']) )
       {
+          if( get_option($opt_vgb_page) != $_POST[$opt_vgb_page] )
+            vgb_auth(plugin_basename(__FILE__), $vgb_version, 2, $_POST[$opt_vgb_page]);
           update_option( $opt_vgb_page, $_POST[$opt_vgb_page] );
           update_option( $opt_vgb_style, $_POST[$opt_vgb_style] );
           update_option( $opt_vgb_items_per_pg, $_POST[$opt_vgb_items_per_pg] );
