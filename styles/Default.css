@@ -46,8 +46,16 @@
     border-right:1px solid #888888;
 }
 
+.gbEntryBottom img, .gbEntryTop img{
+    border:0;
+    margin:0;
+    padding:0;
+}
+
 .gbEntryContent{
-    padding:0 4px;
+    padding:4px;
+    border-top:1px solid #888888;
+    border-bottom:1px solid #888888;
 }
 
 .gbAuthor{
