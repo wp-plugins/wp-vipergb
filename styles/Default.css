@@ -38,6 +38,26 @@
     width:80%
 }
 
+.gbEntryLeft table{
+    border:0;
+    width:100%;
+}
+
+.gbEntryLeft td{
+    border:0;
+    margin:0;
+    padding: 2px;
+    background:none;
+}
+
+.gbEntryLeft .rightSide{
+    text-align:right;
+}
+
+.gbEntryLeft .leftSide{
+    text-align:left;
+}
+
 .gbEntryLeft{
     height:100%;
     padding:0 3px;
@@ -84,6 +104,12 @@
 
 #gbSignPersonal{
     margin-top:5px;
+    border:0;
+}
+
+#gbSignPersonal td{
+    border:0;
+    background:none;
 }
 
 #gbSignPersonal #email, #gbSignPersonal #author, #gbSignPersonal #url{

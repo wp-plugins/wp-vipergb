@@ -142,10 +142,10 @@ function vgb_get_listing_pg($opts)
     <table class="gbEntry page-nav" cellspacing="0">
      <tr>
       <td class="gbEntryLeft" rowspan="3">
-       <table width="100%" cellspacing="0">
+       <table cellspacing="0">
         <tr>
-         <td align="left">EntryNo:</td>
-         <td align="right">
+         <td class="leftSide">EntryNo:</td>
+         <td class="rightSide">
           <?
               if($opts['reverseOrder'])   echo $commentTotal - ($commentCounter--) + 1;
               else                        echo $commentCounter--;
@@ -153,8 +153,8 @@ function vgb_get_listing_pg($opts)
          </td>
         </tr>
         <tr>
-         <td valign="top" align="left">Date:</td>
-         <td align="right">
+         <td valign="top" class="leftSide">Date:</td>
+         <td class="rightSide">
            <?=get_comment_date('l')?><br /><?=get_comment_time('H:i')?><br /><?=get_comment_date('m.d.Y')?>
          </td>
         </tr>
