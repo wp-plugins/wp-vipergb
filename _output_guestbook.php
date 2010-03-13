@@ -1,4 +1,6 @@
 <?
+//Include the comment-upload handler plugin
+require_once('easy-comment-uploads/main.php');
 
 
 /**
@@ -285,21 +287,17 @@ function vgb_get_sign_pg($opts)
           
     <?
     if( $opts['allowUploads'] ):
-      update_option('ecu_upload_limit', $opts['maxImgSizKb']);
-      update_option('ecu_images_only', true);
-      $uploadScript = vgb_get_data_url() . 'easy-comment-uploads/upload.php';
-      require_once('easy-comment-uploads/comment-uploads.php');
-    ?>
-    <!-- Image Upload section: -->  
-    <form target='hiddenframe' enctype='multipart/form-data' action='<?=$uploadScript?>' method='post' name='uploadform' id='uploadform'>
-     <div id="gbSignUpload">   
-      <?=_('Add Photo')?> (max <?=$opts['maxImgSizKb']?>kb):<br />
-      <input type='file' name='file' id='fileField' onchange='document.uploadform.submit();' />
-      <div id='gbSignUploadedFile'></div>
-      <iframe name='hiddenframe' style='display:none' >Loading...</iframe>
-     </div>       
-    </form>
-    <!-- End Image Upload section -->
+      ?>
+      <!-- Image Upload section: -->  
+      <div id="gbSignUpload">  
+        <?
+           update_option('ecu_max_file_size', $opts['maxImgSizKb']);
+           update_option('ecu_images_only', true);
+           ecu_upload_form_core("Add Photo (max " . $opts['maxImgSizKb'] . "kb):");
+           ecu_upload_form_preview();
+        ?>
+      </div>       
+      <!-- End Image Upload section -->
     <?endif;?>  
    </div>
    <?

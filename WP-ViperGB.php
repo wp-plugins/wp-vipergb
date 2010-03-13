@@ -3,14 +3,14 @@
  * Plugin Name: WP-ViperGB
  * Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
  * Author: Justin Klein
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author URI: http://www.justin-klein.com/
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
 
 global $vgb_homepage, $vgb_version;
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.0.3";
+$vgb_version            = "1.0.4";
 
 //Our plugin options
 global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
@@ -63,25 +63,33 @@ function suppress_comments( $file )
 }
 
 
-//Add some styles
-wp_enqueue_style('WP-ViperGB-Default', vgb_get_data_url().'styles/Default.css', array(), $vgb_version );
+//Add some styles (make sure they come after the ecu stylesheet, so we can override)
+wp_enqueue_style('WP-ViperGB-Default', vgb_get_data_url().'styles/Default.css', array('ecu'), $vgb_version );
 $currentStyle = get_option($opt_vgb_style);
 if( $currentStyle != 'Default' )
-    wp_enqueue_style('WP-ViperGB-'.$currentStyle, vgb_get_data_url().'styles/'.$currentStyle.".css", array('WP-ViperGB-Default'), $vgb_version );
+    wp_enqueue_style('WP-ViperGB-'.$currentStyle, vgb_get_data_url().'styles/'.$currentStyle.".css", array('WP-ViperGB-Default', 'ecu'), $vgb_version );
 
 
 //Add support for [img] shortcode in comments (for user-uploaded images)
 add_action('comment_text', 'comment_img_shortcode');
 function comment_img_shortcode($content)
 {
-    return preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" style=\"max-height: 250px; max-width: 300px; padding: 5px 0 5px 0; float:left;\" alt=\"" . basename("$1") . "\" />"', $content);
+    return preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" class=\"ecu_images\" alt=\"" . basename("$1") . "\" />"', $content);
 }
 
 
 //Authenticate
 register_activation_hook(__FILE__, 'vgb_activate');
 register_deactivation_hook(__FILE__, 'vgb_deactivate');
-function vgb_activate()  { vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 1, get_option($GLOBALS['opt_vgb_page'])); }
-function vgb_deactivate(){ vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 0, get_option($GLOBALS['opt_vgb_page'])); }
+function vgb_activate()  
+{ 
+    if( get_option($GLOBALS['opt_vgb_page']) )
+        vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 1, get_option($GLOBALS['opt_vgb_page'])); 
+}
+function vgb_deactivate()
+{
+    if( get_option($GLOBALS['opt_vgb_page']) )
+        vgb_auth(plugin_basename( __FILE__ ), $GLOBALS['vgb_version'], 0, get_option($GLOBALS['opt_vgb_page'])); 
+}
 
 ?>

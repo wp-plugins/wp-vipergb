@@ -89,6 +89,13 @@
     margin-top:3px;
 }
 
+.ecu_images{
+    max-height: 250px;
+    max-width: 300px;
+    padding: 5px 0 5px 0;
+    float:left;
+}
+
 /***************************************************/
 /*              "Sign Guestbook" Page              */
 /***************************************************/
@@ -130,7 +137,18 @@
     text-align:center;
 }
 
-#gbSignUploadedFile{
+
+#ecu_preview{
     width:100%;
     margin: 5px 0;
 }
+
+#ecu_preview .ecu_preview_img{
+    display: block;
+    margin: 0 auto;
+}
+
+#ecu_preview .ecu_preview_file{
+    display:none;
+}
+
