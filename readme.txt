@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
 Tested up to: 2.9.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -55,6 +55,9 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+
+= 1.0.5 (2010-03-16) =
+* Use php long tags instead of short tags for server compatability
 
 = 1.0.4 (2010-03-12) =
 * New version of easy-comment-uploads; should now work on Windows servers

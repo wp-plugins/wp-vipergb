@@ -1,4 +1,4 @@
-<?
+<?php
 //Include the comment-upload handler plugin
 require_once('easy-comment-uploads/main.php');
 
@@ -140,7 +140,7 @@ function vgb_get_listing_pg($opts)
     //And output each comment!
     ?>
     <div id="gbEntriesWrap">
-    <? foreach( $comments as $comment ): ?>
+    <?php foreach( $comments as $comment ): ?>
     <table class="gbEntry page-nav" cellspacing="0">
      <tr>
       <td class="gbEntryLeft" rowspan="3">
@@ -148,7 +148,7 @@ function vgb_get_listing_pg($opts)
         <tr>
          <td class="leftSide">EntryNo:</td>
          <td class="rightSide">
-          <?
+          <?php
               if($opts['reverseOrder'])   echo $commentTotal - ($commentCounter--) + 1;
               else                        echo $commentCounter--;
           ?>
@@ -157,17 +157,17 @@ function vgb_get_listing_pg($opts)
         <tr>
          <td valign="top" class="leftSide">Date:</td>
          <td class="rightSide">
-           <?=get_comment_date('l')?><br /><?=get_comment_time('H:i')?><br /><?=get_comment_date('m.d.Y')?>
+           <?php echo get_comment_date('l')?><br /><?php echo get_comment_time('H:i')?><br /><?php echo get_comment_date('m.d.Y')?>
          </td>
         </tr>
        </table>
       </td>
       <td class="gbEntryTop" valign="middle" align="left" >
        <div class="gbAuthor">
-        <img alt="ip" src="<?=vgb_get_data_url()?>img/ip.gif" /> <?=$comment->comment_author?><?php edit_comment_link('..', '');?>
+        <img alt="ip" src="<?php echo vgb_get_data_url()?>img/ip.gif" /> <?php echo $comment->comment_author?><?php edit_comment_link('..', '');?>
        </div>
        <div class="gbFlagAndBrowser">
-       <?
+       <?php
         if( $opts['showBrowsers'] )
         {
             if( !function_exists('pri_images_string') ) include_once('browsersniff/browsersniff.php');
@@ -183,7 +183,7 @@ function vgb_get_listing_pg($opts)
      </tr>
      <tr>
       <td class="gbEntryContent">
-       <?
+       <?php
        if( $comment->comment_approved == 1 ) comment_text();
        else                                  echo "<i><b>".__('This entry is awaiting moderation')."</b></i>";
        ?>
@@ -191,17 +191,17 @@ function vgb_get_listing_pg($opts)
      </tr>
      <tr>
       <td class="gbEntryBottom">
-       <? if( $comment->comment_author_email ): ?>
-         <img alt="" src="<?=vgb_get_data_url()?>img/email.gif" /> &lt;hidden&gt;<br />
-       <? endif; ?>
-       <? if( $comment->comment_author_url ): ?>
-         <img alt="" src="<?=vgb_get_data_url()?>img/home.gif" /> <a href="<?=$comment->comment_author_url?>"><?=substr($comment->comment_author_url, strpos($comment->comment_author_url, '://')+3)?></a><br />
-       <? endif; ?>
+       <?php if( $comment->comment_author_email ): ?>
+         <img alt="" src="<?php echo vgb_get_data_url()?>img/email.gif" /> &lt;hidden&gt;<br />
+       <?php endif; ?>
+       <?php if( $comment->comment_author_url ): ?>
+         <img alt="" src="<?php echo vgb_get_data_url()?>img/home.gif" /> <a href="<?php echo $comment->comment_author_url?>"><?php echo substr($comment->comment_author_url, strpos($comment->comment_author_url, '://')+3)?></a><br />
+       <?php endif; ?>
       </td>
      </tr>
     </table>
-    <? endforeach; ?>
-    <? if( !$opts['hideCred'] )
+    <?php endforeach; ?>
+    <?php if( !$opts['hideCred'] )
        {
           global $vgb_homepage;
           if( $opts['showCredLink'] )
@@ -209,7 +209,7 @@ function vgb_get_listing_pg($opts)
           else
             echo '<span id="gbCredit">Powered by WP-ViperGB</span>';
         }
-    ?></div><?
+    ?></div><?php
     
     //if( $commentTotal == 0 ):
     endif;
@@ -242,55 +242,55 @@ function vgb_get_sign_pg($opts)
     //And output the page!
    ?>
    <div id="gbSignWrap" class="page-nav">
-    <form action="<?=get_option("siteurl")?>/wp-comments-post.php" method="post" id="commentform">
+    <form action="<?php echo get_option("siteurl")?>/wp-comments-post.php" method="post" id="commentform">
      
      <!-- Name/Email/Homepage section -->
      <table id="gbSignPersonal">
       <tr>
-       <td><?=_('Name')?>:</td>
+       <td><?php echo _('Name')?>:</td>
        <td>
-        <? if($user->ID):?> <input type="text" name="author" id="author" value="<?=$user->display_name?>" disabled="disabled" size="30" maxlength="40" />
-        <? else:         ?> <input type="text" name="author" id="author" value="<?=$commenter['comment_author']?>" size="30" maxlength="40" />
-        <? endif; ?>
+        <?php if($user->ID):?> <input type="text" name="author" id="author" value="<?php echo $user->display_name?>" disabled="disabled" size="30" maxlength="40" />
+        <?php else:         ?> <input type="text" name="author" id="author" value="<?php echo $commenter['comment_author']?>" size="30" maxlength="40" />
+        <?php endif; ?>
        </td>
       </tr>
       <tr>
-       <td><?=_('Email')?>:</td>
+       <td><?php echo _('Email')?>:</td>
        <td>
-        <? if($user->ID):?> <input type="text" name="email" id="email" value="<?=$user->user_email?>" disabled="disabled" size="30" maxlength="40" />
-        <? else:         ?> <input type="text" name="email" id="email" value="<?=$commenter['comment_author_email']?>" size="30" maxlength="40" />
-        <? endif; ?>
+        <?php if($user->ID):?> <input type="text" name="email" id="email" value="<?php echo $user->user_email?>" disabled="disabled" size="30" maxlength="40" />
+        <?php else:         ?> <input type="text" name="email" id="email" value="<?php echo $commenter['comment_author_email']?>" size="30" maxlength="40" />
+        <?php endif; ?>
        </td>
       </tr>
       <tr>
-       <td><?=_('Homepage')?>:</td>
+       <td><?php echo _('Homepage')?>:</td>
        <td>
-        <? if($user->ID):?> <input type="text" name="url" id="url" value="<?=$user->user_url?>" disabled="disabled" size="30" />
-        <? else:         ?> <input type="text" name="url" id="url" value="<?=esc_url($commenter['comment_author_url'])?>" size="30" />
-        <? endif; ?> (optional)
+        <?php if($user->ID):?> <input type="text" name="url" id="url" value="<?php echo $user->user_url?>" disabled="disabled" size="30" />
+        <?php else:         ?> <input type="text" name="url" id="url" value="<?php echo esc_url($commenter['comment_author_url'])?>" size="30" />
+        <?php endif; ?> (optional)
        </td>
       </tr>      
      </table>
-     <? if( $user->ID ) echo "*You may <b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . _("Logout") . "</a></b> to customize these values."; ?>
+     <?php if( $user->ID ) echo "*You may <b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . _("Logout") . "</a></b> to customize these values."; ?>
      <!-- End Name/Email section -->
      
      <!-- Text section -->
      <div id="gbSignText">
        Text:<br />
        <textarea name="comment" id="comment" rows="12" cols="45"></textarea><br />
-       <input style="width:100px;" name="submit" type="submit" id="submit" value="<?=_('Send')?>" />
-       <input type="hidden" name="comment_post_ID" value="<?=$GLOBALS['id']?>" />
-       <input type='hidden' name='redirect_to' value='<?= htmlspecialchars(get_permalink()) ?>' />
+       <input style="width:100px;" name="submit" type="submit" id="submit" value="<?php echo _('Send')?>" />
+       <input type="hidden" name="comment_post_ID" value="<?php echo $GLOBALS['id']?>" />
+       <input type='hidden' name='redirect_to' value='<?php echo htmlspecialchars(get_permalink()) ?>' />
      </div>
      <!-- EndText area section -->
     </form>
           
-    <?
+    <?php
     if( $opts['allowUploads'] ):
       ?>
       <!-- Image Upload section: -->  
       <div id="gbSignUpload">  
-        <?
+        <?php
            update_option('ecu_max_file_size', $opts['maxImgSizKb']);
            update_option('ecu_images_only', true);
            ecu_upload_form_core("Add Photo (max " . $opts['maxImgSizKb'] . "kb):");
@@ -298,9 +298,9 @@ function vgb_get_sign_pg($opts)
         ?>
       </div>       
       <!-- End Image Upload section -->
-    <?endif;?>  
+    <?php endif;?>  
    </div>
-   <?
+   <?php
    
    //Stop capturing output and return
    $output_string=ob_get_contents();

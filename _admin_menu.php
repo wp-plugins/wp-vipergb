@@ -1,4 +1,4 @@
-<?
+<?php
 
 //Set default options.
 add_option($opt_vgb_items_per_pg, 10);
@@ -40,7 +40,7 @@ function vgb_admin_page()
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
     ?>
     <div class="wrap">
-      <?
+      <?php
       if( isset($_POST['opts_updated']) )
       {
           if( get_option($opt_vgb_page) != $_POST[$opt_vgb_page] )
@@ -54,14 +54,14 @@ function vgb_admin_page()
           update_option( $opt_vgb_show_browsers, $_POST[$opt_vgb_show_browsers] );
           update_option( $opt_vgb_show_flags, $_POST[$opt_vgb_show_flags] );
           update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
-          ?><div class="updated"><p><strong><?php _e('Options saved.', 'mt_trans_domain' ); ?></strong></p></div><?
+          ?><div class="updated"><p><strong><?php _e('Options saved.', 'mt_trans_domain' ); ?></strong></p></div><?php
       }
       ?>
       <h2 style="clear: none">
          WP-ViperGB Options
-         <? if( get_option($opt_vgb_page) ): ?>
-         <span style="font-size:12px;"> <a href="edit-comments.php?p=<?=get_option($opt_vgb_page)?>">Manage Entries &raquo;</a></span>
-         <? endif;?>
+         <?php if( get_option($opt_vgb_page) ): ?>
+         <span style="font-size:12px;"> <a href="edit-comments.php?p=<?php echo get_option($opt_vgb_page)?>">Manage Entries &raquo;</a></span>
+         <?php endif;?>
       </h2>
       To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."<br /><br />
       <hr />
@@ -69,8 +69,8 @@ function vgb_admin_page()
       <h4>Main Settings:</h4>
       <form name="formOptions" method="post" action="">
         Guestbook Page:
-        <select style="width:150px;" name="<?=$opt_vgb_page?>">
-          <?
+        <select style="width:150px;" name="<?php echo $opt_vgb_page?>">
+          <?php
             $pages = get_pages();  
             $vgb_page = get_option($opt_vgb_page);
             echo '<option value="0" selected>&lt;None&gt;</option>';
@@ -80,8 +80,8 @@ function vgb_admin_page()
         </select><br />
         
         Guestbook Style:
-        <select style="width:150px;" name="<?=$opt_vgb_style?>">
-          <?
+        <select style="width:150px;" name="<?php echo $opt_vgb_style?>">
+          <?php
              $stylesDir = opendir(dirname(__FILE__) . "/styles");
              while ($file = readdir($stylesDir))
              {
@@ -94,13 +94,13 @@ function vgb_admin_page()
         </select><br />
         
         <h4>Optional Settings:</h4>
-        <input type="checkbox" name="<?=$opt_vgb_reverse?>" value="1" <?= get_option($opt_vgb_reverse)?'checked="checked"':''?> /> Reverse Order (list from oldest to newest)<br />
-        <input type="text" size="3" name="<?=$opt_vgb_items_per_pg?>" value="<?= get_option($opt_vgb_items_per_pg) ?>" /> Entries Per Page<br /><br />
-        <input type="checkbox" name="<?=$opt_vgb_allow_upload?>" value="1" <?= get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
-        <input type="text" size="3" name="<?=$opt_vgb_max_upload_siz?>" value="<?= get_option($opt_vgb_max_upload_siz) ?>" /> Max Image Filesize (kb)<br /><br />
-        <input type="checkbox" name="<?=$opt_vgb_show_browsers?>" value="1" <?= get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> Show Browser &amp; OS Icons<br />
-        <input type="checkbox" name="<?=$opt_vgb_show_flags?>" value="1" <?= get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br /><br />
-        <input type="checkbox" name="<?=$opt_vgb_show_cred_link?>" value="1" <?= get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> Include a Link to the <a href="<?=$vgb_homepage?>">plugin homepage</a> (optional, but much appreciated)<br />
+        <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> Reverse Order (list from oldest to newest)<br />
+        <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> Entries Per Page<br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
+        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> Max Image Filesize (kb)<br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_browsers?>" value="1" <?php echo get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> Show Browser &amp; OS Icons<br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_flags?>" value="1" <?php echo get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_cred_link?>" value="1" <?php echo get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> Include a Link to the <a href="<?php echo $vgb_homepage?>">plugin homepage</a> (optional, but much appreciated)<br />
         <input type="hidden" name="opts_updated" value="1" />
         <div class="submit"><input type="submit" name="Submit" value="Save" /></div>
       </form>
@@ -114,7 +114,7 @@ function vgb_admin_page()
         <li>&bull; <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a>: Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i></li>
       </ul>
     </div>
-    <?
+    <?php
 }
 
 ?>
