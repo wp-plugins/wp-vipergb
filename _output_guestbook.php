@@ -73,8 +73,8 @@ function vgb_get_current_page_num()
 function vgb_get_header( $itemTotal, $entriesPerPg )
 {
     //Comment
-    global $vgb_version;
-    $retVal = "<!-- WP-ViperGB v$vgb_version -->\n";
+    global $vgb_name, $vgb_version;
+    $retVal = "<!-- $vgb_name v$vgb_version -->\n";
         
     //Show Guestbook | Sign Guestbook
     $isListingPg = vgb_is_listing_pg();
