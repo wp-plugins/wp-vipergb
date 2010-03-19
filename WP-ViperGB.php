@@ -8,7 +8,7 @@
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
 
-global $vgb_homepage, $vgb_version;
+global $vgb_name, $vgb_homepage, $vgb_version;
 $vgb_name               = "WP-ViperGB";
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
 $vgb_version            = "1.0.5.2";
@@ -85,12 +85,12 @@ register_deactivation_hook(__FILE__, 'vgb_deactivate');
 function vgb_activate()  
 { 
     if( get_option($GLOBALS['opt_vgb_page']) )
-        vgb_auth($vgb_name, $GLOBALS['vgb_version'], 1, "ON: " . get_option($GLOBALS['opt_vgb_page'])); 
+        vgb_auth($GLOBALS['vgb_name'], $GLOBALS['vgb_version'], 1, "ON: " . get_option($GLOBALS['opt_vgb_page'])); 
 }
 function vgb_deactivate()
 {
     if( get_option($GLOBALS['opt_vgb_page']) )
-        vgb_auth($vgb_name, $GLOBALS['vgb_version'], 0, "OFF: " . get_option($GLOBALS['opt_vgb_page'])); 
+        vgb_auth($GLOBALS['vgb_name'], $GLOBALS['vgb_version'], 0, "OFF: " . get_option($GLOBALS['opt_vgb_page'])); 
 }
 
 ?>
