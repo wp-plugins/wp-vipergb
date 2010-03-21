@@ -93,7 +93,7 @@ function vgb_admin_page()
           ?>
         </select><br />
         
-        <h4>Optional Settings:</h4>
+        <h4>Extra Settings:</h4>
         <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> Reverse Order (list from oldest to newest)<br />
         <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> Entries Per Page<br /><br />
         <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
@@ -104,7 +104,18 @@ function vgb_admin_page()
         <input type="hidden" name="opts_updated" value="1" />
         <div class="submit"><input type="submit" name="Submit" value="Save" /></div>
       </form>
-      
+    
+    <hr />  
+      <h4>Development</h4>
+      Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="BUMTK5NRRG8UN" />
+        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
+    
+    
       <hr />
       <h4>Credits:</h4>
       WP-ViperGB takes advantage of code from several other plugins.  These are:<br /><br />
