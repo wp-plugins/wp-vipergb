@@ -116,7 +116,7 @@ function ecu_options_page () {
 
 		// Inform user
 		echo '<div id="message" class="updated fade"><p>' 
-			. __('Easy Comment Uploads options saved.')
+			. 'Easy Comment Uploads options saved.'
 			. '</p></div>';
 	}
 
@@ -207,9 +207,10 @@ function ecu_allow_upload () {
 }
 
 // Set options to defaults, if not already set
+//JUSTIN: MODIFIED THIS TO HIDE WP VERSION NUMBER
 function ecu_initial_options () {
 	ecu_textdomain ();
-	wp_enqueue_style ('ecu', ecu_plugin_url () . 'style.css');
+	wp_enqueue_style ('ecu', ecu_plugin_url () . 'style.css', array(), "1.0");
 	(get_option ('ecu_permission_required') === true) || add_option ('ecu_permission_required', 'none');
 	(get_option ('ecu_hide_comment_form') === true) || add_option ('ecu_hide_comment_form', 0);
 	(get_option ('ecu_images_only') === true) || add_option ('ecu_images_only', 0);

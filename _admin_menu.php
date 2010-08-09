@@ -63,12 +63,12 @@ function vgb_admin_page()
          <span style="font-size:12px;"> <a href="edit-comments.php?p=<?php echo get_option($opt_vgb_page)?>">Manage Entries &raquo;</a></span>
          <?php endif;?>
       </h2>
-      To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."<br /><br />
+      <?php _e('To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."', WPVGB_DOMAIN) ?><br /><br />
       <hr />
       
-      <h4>Main Settings:</h4>
+      <h4><?php _e('Main Settings', WPVGB_DOMAIN) ?>:</h4>
       <form name="formOptions" method="post" action="">
-        Guestbook Page:
+        <?php _e('Guestbook Page', WPVGB_DOMAIN) ?>:
         <select style="width:150px;" name="<?php echo $opt_vgb_page?>">
           <?php
             $pages = get_pages();  
@@ -79,7 +79,7 @@ function vgb_admin_page()
           ?>
         </select><br />
         
-        Guestbook Style:
+        <?php _e('Guestbook Style', WPVGB_DOMAIN) ?>:
         <select style="width:150px;" name="<?php echo $opt_vgb_style?>">
           <?php
              $stylesDir = opendir(dirname(__FILE__) . "/styles");
@@ -93,14 +93,14 @@ function vgb_admin_page()
           ?>
         </select><br />
         
-        <h4>Extra Settings:</h4>
-        <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> Reverse Order (list from oldest to newest)<br />
-        <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> Entries Per Page<br /><br />
-        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> Allow Image Uploads<br />
-        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> Max Image Filesize (kb)<br /><br />
-        <input type="checkbox" name="<?php echo $opt_vgb_show_browsers?>" value="1" <?php echo get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> Show Browser &amp; OS Icons<br />
-        <input type="checkbox" name="<?php echo $opt_vgb_show_flags?>" value="1" <?php echo get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> Show Flag Icons (Requires <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a> plugin)<br /><br />
-        <input type="checkbox" name="<?php echo $opt_vgb_show_cred_link?>" value="1" <?php echo get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> Include a Link to the <a href="<?php echo $vgb_homepage?>">plugin homepage</a> (optional, but much appreciated)<br />
+        <h4><?php _e('Extra Settings', WPVGB_DOMAIN)?>:</h4>
+        <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> <?php _e('Reverse Order (list from oldest to newest)', WPVGB_DOMAIN)?><br />
+        <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> <?php _e('Entries Per Page', WPVGB_DOMAIN)?><br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> <?php _e('Allow Image Uploads', WPVGB_DOMAIN)?><br />
+        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> <?php _e('Max Image Filesize (kb)', WPVGB_DOMAIN)?><br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_browsers?>" value="1" <?php echo get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> <?php _e('Show Browser &amp; OS Icons',WPVGB_DOMAIN)?><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_flags?>" value="1" <?php echo get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> <?php printf(__("Show Flag Icons (Requires %s)", WPVGB_DOMAIN), '<a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh\'s IP To Nation</a>')?><br /><br />
+        <input type="checkbox" name="<?php echo $opt_vgb_show_cred_link?>" value="1" <?php echo get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> <?php printf(__('Include a Link to the <a href="%s">plugin homepage</a> (optional, but much appreciated)', WPVGB_DOMAIN), $vgb_homepage)?><br />
         <input type="hidden" name="opts_updated" value="1" />
         <div class="submit"><input type="submit" name="Submit" value="Save" /></div>
       </form>

@@ -81,11 +81,11 @@ function vgb_get_header( $itemTotal, $entriesPerPg )
     $retVal .= '<div id="gbHeader">';
     $retVal .= '<div id="gbNavLinks">';
     if( !$isListingPg ) $retVal .= "<a href=\"".get_permalink()."\">";
-    $retVal .= _('Show Guestbook');
+    $retVal .= __('Show Guestbook', WPVGB_DOMAIN);
     if( !$isListingPg ) $retVal .= "</a>";
     $retVal .= " | ";
     if( $isListingPg ) $retVal .= "<a href=\"".htmlspecialchars(add_query_arg(VB_SIGN_PG_ARG, 1))."\">";
-    $retVal .= _('Sign Guestbook');
+    $retVal .= __('Sign Guestbook', WPVGB_DOMAIN);
     if( $isListingPg ) $retVal .= "</a>";
     $retVal .= "</div>";
     
@@ -94,7 +94,7 @@ function vgb_get_header( $itemTotal, $entriesPerPg )
     {
         $curPage = vgb_get_current_page_num();
         $maxPages = ceil($itemTotal/$entriesPerPg);
-        $retVal .= '<div id="gbPageLinks">Page: ';
+        $retVal .= '<div id="gbPageLinks">' . __('Page',WPVGB_DOMAIN) . ': ';
         if( $maxPages > 1 )
         {
             for( $i = 1; $i <= $maxPages; $i++ )
@@ -129,7 +129,7 @@ function vgb_get_listing_pg($opts)
     
     //Check for "no entries"
     if( $commentTotal == 0 ):
-        echo '<div id="gbNoEntriesWrap">No entries yet.</div>';
+        echo '<div id="gbNoEntriesWrap">' . __('No entries yet', WPVGB_DOMAIN) . '.</div>';
     else:
     
     //Take a SLICE of the comments array corresponding to the current page
@@ -146,7 +146,7 @@ function vgb_get_listing_pg($opts)
       <td class="gbEntryLeft" rowspan="3">
        <table cellspacing="0">
         <tr>
-         <td class="leftSide">EntryNo:</td>
+         <td class="leftSide"><?php _e('EntryNo', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
           <?php
               if($opts['reverseOrder'])   echo $commentTotal - ($commentCounter--) + 1;
@@ -155,7 +155,7 @@ function vgb_get_listing_pg($opts)
          </td>
         </tr>
         <tr>
-         <td valign="top" class="leftSide">Date:</td>
+         <td valign="top" class="leftSide"><?php _e('Date', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
            <?php echo get_comment_date('l')?><br /><?php echo get_comment_time('H:i')?><br /><?php echo get_comment_date('m.d.Y')?>
          </td>
@@ -192,7 +192,7 @@ function vgb_get_listing_pg($opts)
      <tr>
       <td class="gbEntryBottom">
        <?php if( $comment->comment_author_email ): ?>
-         <img alt="" src="<?php echo vgb_get_data_url()?>img/email.gif" /> &lt;hidden&gt;<br />
+         <img alt="" src="<?php echo vgb_get_data_url()?>img/email.gif" /> &lt;<?php _e('hidden', WPVGB_DOMAIN)?>&gt;<br />
        <?php endif; ?>
        <?php if( $comment->comment_author_url ): ?>
          <img alt="" src="<?php echo vgb_get_data_url()?>img/home.gif" /> <a href="<?php echo $comment->comment_author_url?>"><?php echo substr($comment->comment_author_url, strpos($comment->comment_author_url, '://')+3)?></a><br />
@@ -247,7 +247,7 @@ function vgb_get_sign_pg($opts)
      <!-- Name/Email/Homepage section -->
      <table id="gbSignPersonal">
       <tr>
-       <td><?php echo _('Name')?>:</td>
+       <td><?php _e('Name', WPVGB_DOMAIN)?>:</td>
        <td>
         <?php if($user->ID):?> <input type="text" name="author" id="author" value="<?php echo $user->display_name?>" disabled="disabled" size="30" maxlength="40" />
         <?php else:         ?> <input type="text" name="author" id="author" value="<?php echo $commenter['comment_author']?>" size="30" maxlength="40" />
@@ -255,7 +255,7 @@ function vgb_get_sign_pg($opts)
        </td>
       </tr>
       <tr>
-       <td><?php echo _('Email')?>:</td>
+       <td><?php _e('Email', WPVGB_DOMAIN)?>:</td>
        <td>
         <?php if($user->ID):?> <input type="text" name="email" id="email" value="<?php echo $user->user_email?>" disabled="disabled" size="30" maxlength="40" />
         <?php else:         ?> <input type="text" name="email" id="email" value="<?php echo $commenter['comment_author_email']?>" size="30" maxlength="40" />
@@ -263,22 +263,22 @@ function vgb_get_sign_pg($opts)
        </td>
       </tr>
       <tr>
-       <td><?php echo _('Homepage')?>:</td>
+       <td><?php _e('Homepage', WPVGB_DOMAIN)?>:</td>
        <td>
         <?php if($user->ID):?> <input type="text" name="url" id="url" value="<?php echo $user->user_url?>" disabled="disabled" size="30" />
         <?php else:         ?> <input type="text" name="url" id="url" value="<?php echo esc_url($commenter['comment_author_url'])?>" size="30" />
-        <?php endif; ?> (optional)
+        <?php endif; ?> (<?php _e('optional', WPVGB_DOMAIN)?>)
        </td>
       </tr>      
      </table>
-     <?php if( $user->ID ) echo "*You may <b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . _("Logout") . "</a></b> to customize these values."; ?>
+     <?php if( $user->ID ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout") . "</a></b>."; ?>
      <!-- End Name/Email section -->
      
      <!-- Text section -->
      <div id="gbSignText">
-       Text:<br />
+       <?php _e('Text', WPVGB_DOMAIN)?>:<br />
        <textarea name="comment" id="comment" rows="12" cols="45"></textarea><br />
-       <input style="width:100px;" name="submit" type="submit" id="submit" value="<?php echo _('Send')?>" />
+       <input style="width:100px;" name="submit" type="submit" id="submit" value="<?php _e('Send', WPVGB_DOMAIN)?>" />
        <input type="hidden" name="comment_post_ID" value="<?php echo $GLOBALS['id']?>" />
        <input type='hidden' name='redirect_to' value='<?php echo htmlspecialchars(get_permalink()) ?>' />
      </div>
@@ -293,7 +293,8 @@ function vgb_get_sign_pg($opts)
         <?php
            update_option('ecu_max_file_size', $opts['maxImgSizKb']);
            update_option('ecu_images_only', true);
-           ecu_upload_form_core("Add Photo (max " . $opts['maxImgSizKb'] . "kb):");
+           $msg = sprintf(__("Add photo (max %dkb)", WPVGB_DOMAIN), $opts['maxImgSizKb']) . ":";
+           ecu_upload_form_core($msg);
            ecu_upload_form_preview();
         ?>
       </div>       

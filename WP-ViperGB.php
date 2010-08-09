@@ -3,7 +3,7 @@
  * Plugin Name: WP-ViperGB
  * Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
  * Author: Justin Klein
- * Version: 1.0.5
+ * Version: 1.1.0
  * Author URI: http://www.justin-klein.com/
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
@@ -30,7 +30,7 @@
 global $vgb_name, $vgb_homepage, $vgb_version;
 $vgb_name               = "WP-ViperGB";
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.0.5.3";
+$vgb_version            = "1.1.0";
 
 //Our plugin options
 global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
@@ -45,6 +45,10 @@ $opt_vgb_max_upload_siz = 'vgb_max_upload_siz';
 $opt_vgb_show_browsers  = 'vgb_show_browsers';
 $opt_vgb_show_flags     = 'vgb_show_flags';
 $opt_vgb_show_cred_link = 'vgb_show_cred_link';
+
+//Load the textdomain for localization
+define('WPVGB_DOMAIN', 'wpvipergb');
+load_plugin_textdomain(WPVGB_DOMAIN, dirname( plugin_basename(__FILE__) ) . '/lang');
 
 //Include required implementation code
 require_once('_output_guestbook.php');
