@@ -83,3 +83,8 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 = 1.0.0 (2010-03-08) =
 * First Release
+
+
+== Support ==
+
+Please direct all support requests [here](http://www.justin-klein.com/projects/wp-vipergb#feedback)
