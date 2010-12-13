@@ -3,7 +3,7 @@
  * Plugin Name: WP-ViperGB
  * Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
  * Author: Justin Klein
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author URI: http://www.justin-klein.com/
  * Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */

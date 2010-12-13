@@ -269,7 +269,15 @@ function vgb_get_sign_pg($opts)
         <?php else:         ?> <input type="text" name="url" id="url" value="<?php echo esc_url($commenter['comment_author_url'])?>" size="30" />
         <?php endif; ?> (<?php _e('optional', WPVGB_DOMAIN)?>)
        </td>
-      </tr>      
+      </tr> 
+     </table>
+     <table>
+       <tr>
+         <td>
+           <?php remove_action('comment_form', 'show_subscription_checkbox'); ?>
+           <?php do_action('comment_form', $post->ID); ?>
+         </td>
+       </tr>
      </table>
      <?php if( $user->ID ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout") . "</a></b>."; ?>
      <!-- End Name/Email section -->
