@@ -157,7 +157,7 @@ function vgb_get_listing_pg($opts)
         <tr>
          <td valign="top" class="leftSide"><?php _e('Date', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
-           <?php echo get_comment_date('l')?><br /><?php echo get_comment_time('H:i')?><br /><?php echo get_comment_date('m.d.Y')?>
+           <?php echo get_comment_date('l')?><br /><?php echo get_comment_time(__('H:i',WPVGB_DOMAIN))?><br /><?php echo get_comment_date(__('m.d.Y',WPVGB_DOMAIN))?>
          </td>
         </tr>
        </table>
@@ -185,7 +185,7 @@ function vgb_get_listing_pg($opts)
       <td class="gbEntryContent">
        <?php
        if( $comment->comment_approved == 1 ) comment_text();
-       else                                  echo "<i><b>".__('This entry is awaiting moderation')."</b></i>";
+       else                                  echo "<i><b>".__('This entry is awaiting moderation',WPVGB_DOMAIN)."</b></i>";
        ?>
       </td>
      </tr>
