@@ -106,8 +106,8 @@ function vgb_admin_page()
       </form>
     
     <hr />  
-      <h4>Development</h4>
-      Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)
+      <h4><?php _e('Development', WPVGB_DOMAIN) ?></h4>
+      <?php _e("Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)", WPVGB_DOMAIN) ?>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="BUMTK5NRRG8UN" />
