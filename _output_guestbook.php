@@ -279,7 +279,7 @@ function vgb_get_sign_pg($opts)
          </td>
        </tr>
      </table>
-     <?php if( $user->ID ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout") . "</a></b>."; ?>
+     <?php if( $user->ID ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout", WPVGB_DOMAIN) . "</a></b>."; ?>
      <!-- End Name/Email section -->
      
      <!-- Text section -->
