@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-08 19:01-0800\n"
-"PO-Revision-Date: 2010-08-08 19:01-0800\n"
+"POT-Creation-Date: 2011-01-07 20:30+0700\n"
+"PO-Revision-Date: 2011-01-07 20:31+0700\n"
 "Last-Translator: Justin Klein <justin@justin-klein.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,14 @@ msgstr ""
 
 #: ../_admin_menu.php:57
 msgid "Options saved."
+msgstr ""
+
+#: ../_admin_menu.php:61
+msgid "WP-ViperGB Options"
+msgstr ""
+
+#: ../_admin_menu.php:63
+msgid "Manage Entries"
 msgstr ""
 
 #: ../_admin_menu.php:66
@@ -71,6 +79,38 @@ msgstr ""
 msgid "Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much appreciated)"
 msgstr ""
 
+#: ../_admin_menu.php:105
+msgid "Save"
+msgstr ""
+
+#: ../_admin_menu.php:109
+msgid "Development"
+msgstr ""
+
+#: ../_admin_menu.php:110
+msgid "Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)"
+msgstr ""
+
+#: ../_admin_menu.php:121
+msgid "Credits"
+msgstr ""
+
+#: ../_admin_menu.php:122
+msgid "WP-ViperGB takes advantage of code from several other plugins.  These are:"
+msgstr ""
+
+#: ../_admin_menu.php:124
+msgid "Allow users to embed images in their guestbook entries. <i>This functionality is included by default, but must be explicitly enabled above.</i>"
+msgstr ""
+
+#: ../_admin_menu.php:125
+msgid "Show a browser and operating system icon in each visitor's guestbook entry.  <i>This functionality is included by default.</i>"
+msgstr ""
+
+#: ../_admin_menu.php:126
+msgid "Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i>"
+msgstr ""
+
 #: ../_output_guestbook.php:84
 msgid "Show Guestbook"
 msgstr ""
@@ -93,6 +133,14 @@ msgstr ""
 
 #: ../_output_guestbook.php:158
 msgid "Date"
+msgstr ""
+
+#: ../_output_guestbook.php:160
+msgid "H:i"
+msgstr ""
+
+#: ../_output_guestbook.php:160
+msgid "m.d.Y"
 msgstr ""
 
 #: ../_output_guestbook.php:188
@@ -119,23 +167,23 @@ msgstr ""
 msgid "optional"
 msgstr ""
 
-#: ../_output_guestbook.php:274
+#: ../_output_guestbook.php:282
 msgid "*If you'd like to customize these values, please "
 msgstr ""
 
-#: ../_output_guestbook.php:274
+#: ../_output_guestbook.php:282
 msgid "Logout"
 msgstr ""
 
-#: ../_output_guestbook.php:279
+#: ../_output_guestbook.php:287
 msgid "Text"
 msgstr ""
 
-#: ../_output_guestbook.php:281
+#: ../_output_guestbook.php:289
 msgid "Send"
 msgstr ""
 
-#: ../_output_guestbook.php:296
+#: ../_output_guestbook.php:304
 #, php-format
 msgid "Add photo (max %dkb)"
 msgstr ""

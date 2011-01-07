@@ -118,12 +118,12 @@ function vgb_admin_page()
     
     
       <hr />
-      <h4>Credits:</h4>
-      WP-ViperGB takes advantage of code from several other plugins.  These are:<br /><br />
+      <h4><?php _e('Credits', WPVGB_DOMAIN) ?>:</h4>
+      <?php _e("WP-ViperGB takes advantage of code from several other plugins.  These are:", WPVGB_DOMAIN)?><br /><br />
       <ul>
-        <li>&bull; <a href="http://wordpress.org/extend/plugins/easy-comment-uploads/">Easy Comment Uploads</a>: Allow users to embed images in their guestbook entries. <i>This functionality is included by default, but must be explicitly enabled above.</i></li>
-        <li>&bull; <a href="http://priyadi.net/archives/2005/03/29/wordpress-browser-detection-plugin/">BrowserSniff</a>: Show a browser and operating system icon in each visitor's guestbook entry.  <i>This functionality is included by default.</i></li>
-        <li>&bull; <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a>: Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i></li>
+        <li>&bull; <a href="http://wordpress.org/extend/plugins/easy-comment-uploads/">Easy Comment Uploads</a>: <?php _e("Allow users to embed images in their guestbook entries. <i>This functionality is included by default, but must be explicitly enabled above.</i>", WPVGB_DOMAIN)?></li>
+        <li>&bull; <a href="http://priyadi.net/archives/2005/03/29/wordpress-browser-detection-plugin/">BrowserSniff</a>: <?php _e("Show a browser and operating system icon in each visitor's guestbook entry.  <i>This functionality is included by default.</i>", WPVGB_DOMAIN)?></li>
+        <li>&bull; <a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh's IP To Nation</a>: <?php _e("Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i>", WPVGB_DOMAIN)?></li>
       </ul>
     </div>
     <?php
