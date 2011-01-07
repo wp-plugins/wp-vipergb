@@ -24,7 +24,7 @@ add_filter('plugin_action_links', 'vgb_add_plugin_links', 10, 2);
 function vgb_add_plugin_links($links, $file)
 {
     if( dirname(plugin_basename( __FILE__ )) == dirname($file) )
-        $links[] = '<a href="options-general.php?page=' . "wp-vipergb" .'">' . __('Settings','sitemap') . '</a>';
+        $links[] = '<a href="options-general.php?page=' . "wp-vipergb" .'">' . __('Settings',WPVGB_DOMAIN) . '</a>';
     return $links;
 }
 
@@ -54,7 +54,7 @@ function vgb_admin_page()
           update_option( $opt_vgb_show_browsers, $_POST[$opt_vgb_show_browsers] );
           update_option( $opt_vgb_show_flags, $_POST[$opt_vgb_show_flags] );
           update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
-          ?><div class="updated"><p><strong><?php _e('Options saved.', 'mt_trans_domain' ); ?></strong></p></div><?php
+          ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
       }
       ?>
       <h2 style="clear: none">
