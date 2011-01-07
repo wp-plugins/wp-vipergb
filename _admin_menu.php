@@ -58,9 +58,9 @@ function vgb_admin_page()
       }
       ?>
       <h2 style="clear: none">
-         WP-ViperGB Options
+         <?php _e('WP-ViperGB Options', WPVGB_DOMAIN) ?>
          <?php if( get_option($opt_vgb_page) ): ?>
-         <span style="font-size:12px;"> <a href="edit-comments.php?p=<?php echo get_option($opt_vgb_page)?>">Manage Entries &raquo;</a></span>
+         <span style="font-size:12px;"> <a href="edit-comments.php?p=<?php echo get_option($opt_vgb_page)?>"><?php _e('Manage Entries', WPVGB_DOMAIN) ?> &raquo;</a></span>
          <?php endif;?>
       </h2>
       <?php _e('To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."', WPVGB_DOMAIN) ?><br /><br />
@@ -102,7 +102,7 @@ function vgb_admin_page()
         <input type="checkbox" name="<?php echo $opt_vgb_show_flags?>" value="1" <?php echo get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> <?php printf(__("Show Flag Icons (Requires %s)", WPVGB_DOMAIN), '<a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh\'s IP To Nation</a>')?><br /><br />
         <input type="checkbox" name="<?php echo $opt_vgb_show_cred_link?>" value="1" <?php echo get_option($opt_vgb_show_cred_link)?'checked="checked"':''?> /> <?php printf(__('Include a Link to the <a href="%s">plugin homepage</a> (optional, but much appreciated)', WPVGB_DOMAIN), $vgb_homepage)?><br />
         <input type="hidden" name="opts_updated" value="1" />
-        <div class="submit"><input type="submit" name="Submit" value="Save" /></div>
+        <div class="submit"><input type="submit" name="Submit" value="<?php _e('Save',WPVGB_DOMAIN)?>" /></div>
       </form>
     
     <hr />  
