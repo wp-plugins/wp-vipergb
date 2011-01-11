@@ -205,9 +205,9 @@ function vgb_get_listing_pg($opts)
        {
           global $vgb_homepage;
           if( $opts['showCredLink'] )
-            echo '<span id="gbCredit">Powered by <a href="'. $vgb_homepage. '">WP-ViperGB</a></span>';
+            echo '<span id="gbCredit">' . __("Powered by", WPVGB_DOMAIN) . ' <a href="'. $vgb_homepage. '">WP-ViperGB</a></span>';
           else
-            echo '<span id="gbCredit">Powered by WP-ViperGB</span>';
+            echo '<span id="gbCredit">' . __("Powered by", WPVGB_DOMAIN) . ' WP-ViperGB</span>';
         }
     ?></div><?php
     
