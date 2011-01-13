@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-07 17:16+0300\n"
-"PO-Revision-Date: 2011-01-08 13:16+0300\n"
+"POT-Creation-Date: 2011-01-12 18:39+0300\n"
+"PO-Revision-Date: 2011-01-12 18:44+0300\n"
 "Last-Translator: Dimonira <dimonira@ya.ru>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -152,6 +152,11 @@ msgstr "Эта запись ожидает модерирования"
 #: ../_output_guestbook.php:195
 msgid "hidden"
 msgstr "скрыт"
+
+#: ../_output_guestbook.php:208
+#: ../_output_guestbook.php:210
+msgid "Powered by"
+msgstr "Разработано"
 
 #: ../_output_guestbook.php:250
 msgid "Name"
