@@ -1,10 +1,10 @@
 <?php
-//Plugin Name: Easy Comment Uploads
-//Plugin URI: http://wordpress.org/extend/plugins/easy-comment-uploads/
-//Description: Allow your users to easily upload images and files in their comments.
-//Author: Tom Wright
-//Version: 0.51
-//Author URI: http://twright.langtreeshout.org/
+//Plugin Namex: Easy Comment Uploads
+//Plugin URIx: http://wordpress.org/extend/plugins/easy-comment-uploads/
+//Descriptionx: Allow your users to easily upload images and files in their comments.
+//Authorx: Tom Wright
+//Versionx: 0.51
+//Author URIx: http://twright.langtreeshout.org/
 
 // Replaces [img] tags in comments with linked images (with lightbox support)
 // Accepts either [img]image.png[/img] or [img=image.png]

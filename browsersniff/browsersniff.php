@@ -1,12 +1,10 @@
 <?php
-/*
-Plugin Name: Browser Sniff
-Plugin URI: http://priyadi.net/archives/2005/03/29/wordpress-browser-detection-plugin/
-Description: Detects web browser type and operating system
-Version: 1.10
-Author: Priyadi Iman Nurcahyo
-Author URI: http://priyadi.net/
-*/
+//Plugin Namex: Browser Sniff
+//Plugin URIx: http://priyadi.net/archives/2005/03/29/wordpress-browser-detection-plugin/
+//Descriptionx: Detects web browser type and operating system
+//Versionx: 1.10
+//Authorx: Priyadi Iman Nurcahyo
+//Author URIx: http://priyadi.net/
 
 // begin settings
 
