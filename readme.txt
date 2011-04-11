@@ -3,8 +3,8 @@ Contributors: Justin_K
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BUMTK5NRRG8UN
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
-Tested up to: 3.0.1
-Stable tag: 1.1.16
+Tested up to: 3.1
+Stable tag: 1.1.17
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -55,19 +55,23 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
-= 1.1.16 (2010-01-25) =
+= 1.1.17 (2011-04-11) =
+* Mark as compatible to 3.1
+* Attempt to fix "The plugin does not have a valid header"
+
+= 1.1.16 (2011-01-25) =
 * Add German translation
 
-= 1.1.15 (2010-01-13) =
+= 1.1.15 (2011-01-13) =
 * Updated Russian translation
 
-= 1.1.14 (2010-01-12) =
+= 1.1.14 (2011-01-12) =
 * Add Italian translation
 
-= 1.1.13 (2010-01-12) =
+= 1.1.13 (2011-01-12) =
 * Fix parse error
 
-= 1.1.12 (2010-01-11) =
+= 1.1.12 (2011-01-11) =
 * Add Russian translation
 
 = 1.1.11 (2011-01-07) =
