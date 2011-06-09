@@ -30,7 +30,7 @@ Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 global $vgb_name, $vgb_homepage, $vgb_version;
 $vgb_name               = "WP-ViperGB";
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.1.19";
+$vgb_version            = "1.1.19.1";
 
 //Our plugin options
 global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
