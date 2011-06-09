@@ -325,6 +325,7 @@ function vgb_auth($name, $version, $event, $message=0)
     $AuthVer = 1;
     $data = serialize(array(
            'plugin'      => $name,
+           'pluginID'	 => '1168',
            'version'     => $version,
            'wp_version'  => $GLOBALS['wp_version'],
            'php_version' => PHP_VERSION,
