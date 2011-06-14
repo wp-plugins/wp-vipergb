@@ -38,6 +38,7 @@ function vgb_admin_page()
     global $opt_vgb_page, $opt_vgb_style, $opt_vgb_reverse, $opt_vgb_allow_upload;
     global $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
+    global $opt_vgb_hidesponsor;
     ?>
     <div class="wrap">
       <?php
@@ -56,6 +57,8 @@ function vgb_admin_page()
           update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
           ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
       }
+      if( isset($_REQUEST[$opt_vgb_hidesponsor]) )
+          update_option($opt_vgb_hidesponsor, $_REQUEST[$opt_vgb_hidesponsor]);
       ?>
       <h2 style="clear: none">
          <?php _e('WP-ViperGB Options', WPVGB_DOMAIN) ?>
@@ -63,7 +66,17 @@ function vgb_admin_page()
          <span style="font-size:12px;"> <a href="edit-comments.php?p=<?php echo get_option($opt_vgb_page)?>"><?php _e('Manage Entries', WPVGB_DOMAIN) ?> &raquo;</a></span>
          <?php endif;?>
       </h2>
+      
       <?php _e('To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."', WPVGB_DOMAIN) ?><br /><br />
+        
+      <?php if(!get_option($opt_vgb_hidesponsor)): ?>
+      	<script type="text/javascript">
+        var psHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cscript src='" + psHost + "pluginsponsors.com/direct/spsn/display.php?client=wp-vipergb&spot=' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <div style="float: right; font-size: 75%; margin-top:-0.75em;"><a href="http://pluginsponsors.com/privacy.html">Privacy policy</a> |
+        <a href="?page=wp-vipergb&<?php echo $opt_vgb_hidesponsor ?>=1">Hide these messages</a></div><br clear="all" />
+        <?php endif; ?>
       <hr />
       
       <h4><?php _e('Main Settings', WPVGB_DOMAIN) ?>:</h4>
