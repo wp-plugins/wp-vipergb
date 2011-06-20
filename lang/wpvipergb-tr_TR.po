@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-07 20:30+0700\n"
-"PO-Revision-Date: 2011-06-20 11:37+0200\n"
+"PO-Revision-Date: 2011-06-21 01:37+0200\n"
 "Last-Translator: Devasa Bilişim <bilgi@devasabilisim.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Yorumları Yönet"
 
 #: ../_admin_menu.php:66
 msgid "To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click \"Save.\""
-msgstr "Blogunuza bir ziyaretçi defteri eklemek için, sadece, yeni bir sayfa oluşturun ve alttaki ilk combobox'tan ziyaretçi defteri için eklemiş olduğunuz sayfayı seçin ve \"Kaydet.\" Butonuna Basınız."
+msgstr "Blogunuza bir ziyaretçi defteri eklemek için, yeni bir sayfa oluşturun ve alttaki ilk combobox'tan ziyaretçi defteri için eklemiş olduğunuz sayfayı seçin ve \"Kaydet.\" Butonuna Basınız."
 
 #: ../_admin_menu.php:69
 msgid "Main Settings"
@@ -89,7 +89,7 @@ msgstr "Gelişme"
 
 #: ../_admin_menu.php:110
 msgid "Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)"
-msgstr "Mümkün Olduğunca temiz ve kolay kullanım için saatlerce bu eklentiyi oluşturmaya çalıştım. Bağış yapıp yapmamkta Özgürsünüz. Ama unutmayın ki her bağış size daha iyi ve kullanışlı bir eklenti olarak geri dönecektir. Eğer eklentiyi kullanışlı buluyorsanız, küçük bir bağış biyük taktirdir. :)"
+msgstr "Mümkün Olduğunca temiz ve kolay kullanım için saatlerce bu eklentiyi oluşturmaya çalıştım. Bağış yapıp yapmamkta Özgürsünüz. Ama unutmayın ki her bağış size daha iyi ve kullanışlı bir eklenti olarak geri dönecektir. Eğer eklentiyi kullanışlı buluyorsanız, küçük bir bağış büyük taktirdir. :)"
 
 #: ../_admin_menu.php:121
 msgid "Credits"
@@ -117,7 +117,7 @@ msgstr "Ziyaretçi Defterini Göster"
 
 #: ../_output_guestbook.php:88
 msgid "Sign Guestbook"
-msgstr "Ziyaretçi Defterine YAZ!!"
+msgstr "Ziyaretçi Defterine YAZ!"
 
 #: ../_output_guestbook.php:97
 msgid "Page"
@@ -129,11 +129,11 @@ msgstr "Henüz Yazı yok."
 
 #: ../_output_guestbook.php:149
 msgid "EntryNo"
-msgstr "Yorum No:"
+msgstr "Yorum No"
 
 #: ../_output_guestbook.php:158
 msgid "Date"
-msgstr "Tarih :"
+msgstr "Tarih"
 
 #: ../_output_guestbook.php:160
 msgid "H:i"
@@ -161,7 +161,7 @@ msgstr "Email"
 
 #: ../_output_guestbook.php:266
 msgid "Homepage"
-msgstr "Anasayfa"
+msgstr "Web Site"
 
 #: ../_output_guestbook.php:270
 msgid "optional"
@@ -169,7 +169,7 @@ msgstr "İsteğe Bağlı"
 
 #: ../_output_guestbook.php:282
 msgid "*If you'd like to customize these values, please "
-msgstr " * Eğer Bu değerleri özelleştirmek istiyorsanız, lütfen"
+msgstr " * Eğer Bu değerleri özelleştirmek istiyorsanız, lütfen "
 
 #: ../_output_guestbook.php:282
 msgid "Logout"
@@ -177,7 +177,7 @@ msgstr "Çıkış Yap"
 
 #: ../_output_guestbook.php:287
 msgid "Text"
-msgstr "Yazı"
+msgstr "Mesajınız "
 
 #: ../_output_guestbook.php:289
 msgid "Send"
@@ -194,7 +194,7 @@ msgstr "Dosya Yükle"
 
 #: ../easy-comment-uploads/main.php:87
 msgid "You can include images or files in your comment by selecting them below. Once you select a file, it will be uploaded and a link to it added to your comment. You can upload as many images or files as you like and they will all be added to your comment."
-msgstr ""
+msgstr "Aşağıdaki seçeneği seçerek yorumlara resimler veya dosyalar yüklemesini sağlayabilirsiniz. Önce Yükleyeceğiniz Dosyayı seçiniz. Dosya yüklenir ve yorumunuza eklenir. İstediğiniz sayıda resim veya dosya yükleyebilirsiniz. Hepsi Yorumunuza eklenecektir."
 
 #: ../easy-comment-uploads/main.php:88
 msgid "Select File"
