@@ -70,13 +70,8 @@ function vgb_admin_page()
       <?php _e('To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click "Save."', WPVGB_DOMAIN) ?><br /><br />
         
       <?php if(!get_option($opt_vgb_hidesponsor)): ?>
-      	<script type="text/javascript">
-        var psHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-        document.write(unescape("%3Cscript src='" + psHost + "pluginsponsors.com/direct/spsn/display.php?client=wp-vipergb&spot=' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-        <div style="float: right; font-size: 75%; margin-top:-0.75em;"><a href="http://pluginsponsors.com/privacy.html">Privacy policy</a> |
-        <a href="?page=wp-vipergb&<?php echo $opt_vgb_hidesponsor ?>=1">Hide these messages</a></div><br clear="all" />
-        <?php endif; ?>
+        <!-- Sponsorship message *was* here, until Automattic demanded they be removed from all plugins - see http://gregsplugins.com/lib/2011/11/26/automattic-bullies/ -->
+      <?php endif; ?>
       <hr />
       
       <h4><?php _e('Main Settings', WPVGB_DOMAIN) ?>:</h4>
