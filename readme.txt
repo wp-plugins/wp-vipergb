@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
 Tested up to: 3.2.1
-Stable tag: 1.1.24
+Stable tag: 1.1.25
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -55,6 +55,10 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+= 1.1.25 (2011-12-09) =
+* Add Danish translation
+* Remove the wp-fb-autoconnect premium button from the "sign" page
+
 = 1.1.24 (2011-12-01) =
 * Remove the "subscribe_reloaded_show" action from the "sign" page
 

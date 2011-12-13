@@ -276,6 +276,7 @@ function vgb_get_sign_pg($opts)
          <td>
            <?php remove_action('comment_form', 'show_subscription_checkbox'); ?>
            <?php remove_action('comment_form', 'subscribe_reloaded_show'); ?>
+           <?php remove_action('comment_form', 'jfb_show_comment_button'); ?>
            <?php do_action('comment_form', $post->ID); ?>
          </td>
        </tr>
