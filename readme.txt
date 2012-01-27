@@ -55,7 +55,7 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
-= 1.1.27 (2012-01-27) =
+= 1.1.26 (2012-01-27) =
 * Add Swedish translation
 
 = 1.1.25 (2011-12-09) =
