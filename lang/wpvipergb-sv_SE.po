@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-07 20:30+0700\n"
-"PO-Revision-Date: 2012-01-27 14:34+0100\n"
+"PO-Revision-Date: 2012-01-28 04:09+0100\n"
 "Last-Translator: cjw <chhg@cjwhkjh.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Hantera inmatning"
 
 #: ../_admin_menu.php:66
 msgid "To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click \"Save.\""
-msgstr "För att lägga till en Gästbok till din blogg, skapa en ny sida och välj den sedan i första kombinationsrutan nedan. Tryck sedan på Spara nedan."
+msgstr "För att lägga till en Gästbok till din blogg, skapa en ny sida och välj den sedan i första kombinationsrutan nedan. Tryck sedan på Spara."
 
 #: ../_admin_menu.php:69
 msgid "Main Settings"
@@ -72,12 +72,12 @@ msgstr "Visa webbläsarikoner"
 #: ../_admin_menu.php:102
 #, php-format
 msgid "Show Flag Icons (Requires %s)"
-msgstr "Visa Flaggikon (land)"
+msgstr "Visa Flaggikoner (Kräver %s)"
 
 #: ../_admin_menu.php:103
 #, php-format
 msgid "Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much appreciated)"
-msgstr "Inkludera en länk till VPViberGB´s hemsida (Frivilligt men mycket uppskattat)"
+msgstr "Inkludera en länk till WP-ViberGB´s hemsida (Frivilligt men mycket uppskattat)"
 
 #: ../_admin_menu.php:105
 msgid "Save"
@@ -89,7 +89,7 @@ msgstr "Utveckling"
 
 #: ../_admin_menu.php:110
 msgid "Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)"
-msgstr "Mycket tid har lagts på att göra detta tillägg så enkelt och smidigt som möjligt  att använda. Även om det är gratis, så tänk på  att all den tid jag lagt på att utveckla detta tillägg kunde ha lagts på inkomstbringande arbete. Så om du tycker det är användbart så skulle en mindre donation vara mycket uppskattat :)"
+msgstr "Mycket tid har lagts på att göra detta tillägg så enkelt och smidigt som möjligt  att använda. Även om det är gratis, så tänk på  att all den tid jag lagt på att utveckla detta tillägg kunde ha lagts på inkomstbringande arbete. Så om du tycker det är användbart så skulle en mindre donation vara mycket uppskattad :)"
 
 #: ../_admin_menu.php:121
 msgid "Credits"
@@ -101,11 +101,11 @@ msgstr "WP-ViperGB använder kod från flera andra tillägg. Dessa är:"
 
 #: ../_admin_menu.php:124
 msgid "Allow users to embed images in their guestbook entries. <i>This functionality is included by default, but must be explicitly enabled above.</i>"
-msgstr "Tillåter användare att infoga bilder i deras gästboks-inlägg. <i>Denna funktionalitet inkluderad som standard och måste aktiveras ovan .</i>"
+msgstr "Tillåter användare att infoga bilder i deras gästboks-inlägg. <i>Denna funktionalitet är inkluderad som standard och måste aktiveras ovan .</i>"
 
 #: ../_admin_menu.php:125
 msgid "Show a browser and operating system icon in each visitor's guestbook entry.  <i>This functionality is included by default.</i>"
-msgstr "Visa ikon för webbläsare och operativsystem i besökarnas inlägg <i>Tillägget är inkluderat som standardt.</i>"
+msgstr "Visa ikon för webbläsare och operativsystem i besökarnas inlägg <i>Tillägget är inkluderat som standard.</i>"
 
 #: ../_admin_menu.php:126
 msgid "Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i>"
@@ -125,7 +125,7 @@ msgstr "Sida"
 
 #: ../_output_guestbook.php:132
 msgid "No entries yet"
-msgstr "Inga inlägg"
+msgstr "Inga inlägg i gästboken än"
 
 #: ../_output_guestbook.php:149
 msgid "EntryNo"
@@ -137,11 +137,11 @@ msgstr "Datum"
 
 #: ../_output_guestbook.php:160
 msgid "H:i"
-msgstr ""
+msgstr "H:i"
 
 #: ../_output_guestbook.php:160
 msgid "m.d.Y"
-msgstr ""
+msgstr "m.d.Y"
 
 #: ../_output_guestbook.php:188
 msgid "This entry is awaiting moderation"
@@ -161,7 +161,7 @@ msgstr "Email"
 
 #: ../_output_guestbook.php:266
 msgid "Homepage"
-msgstr "Webbplats"
+msgstr "Webbplats/Hemsida"
 
 #: ../_output_guestbook.php:270
 msgid "optional"
@@ -169,7 +169,7 @@ msgstr "Frivillig uppgift"
 
 #: ../_output_guestbook.php:282
 msgid "*If you'd like to customize these values, please "
-msgstr "Om du vill ändra ovan v.v."
+msgstr "Om du vill ändra ovanstående uppgifter v.v."
 
 #: ../_output_guestbook.php:282
 msgid "Logout"
@@ -177,7 +177,7 @@ msgstr "Logga ut"
 
 #: ../_output_guestbook.php:287
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: ../_output_guestbook.php:289
 msgid "Send"
@@ -186,7 +186,7 @@ msgstr "Skicka"
 #: ../_output_guestbook.php:304
 #, php-format
 msgid "Add photo (max %dkb)"
-msgstr "Lägg till foto (max %dbk)"
+msgstr "Lägg till foto ( max % dkb )"
 
 #: ../easy-comment-uploads/main.php:86
 msgid "Upload Files"
