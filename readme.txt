@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
 Tested up to: 3.3.1
-Stable tag: 1.1.30
+Stable tag: 1.2.0
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -19,7 +19,6 @@ Features:
 * Lives in a standard Wordpress page and uses comments for entries, so moderation and antispam functionality works as normal.
 * Two-View layout provides one view for submitting entries and another for reading them.
 * Automatic paging of entries to customizable length.
-* Allow users to upload and embed images in their signatures.
 * Show icons for country, browser, and OS in visitor signatures.
 * Admin-panel stylesheet selector allows easy skinning to suit your theme.
 * No bloat: Uses existing Wordpress faculties so no custom database tables are required.
@@ -55,6 +54,9 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+= 1.2.0 (2012-08-16) =
+* Remove the ability to embed images in user signatures.  Due to a security exploit discovered in Easy-Comment-Uploads, the script upon which this feature was built, it had to be removed to satisfy Wordpress' safety guidelines and keep this plugin available.
+
 = 1.1.30 (2012-03-25) =
 * Add Dutch translation
 

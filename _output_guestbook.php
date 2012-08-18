@@ -1,6 +1,6 @@
 <?php
 //Include the comment-upload handler plugin
-require_once('easy-comment-uploads/main.php');
+//ECU Code require_once('easy-comment-uploads/main.php');
 
 
 /**
@@ -301,11 +301,13 @@ function vgb_get_sign_pg($opts)
       <!-- Image Upload section: -->  
       <div id="gbSignUpload">  
         <?php
+        /*ECU Code
            update_option('ecu_max_file_size', $opts['maxImgSizKb']);
            update_option('ecu_images_only', true);
            $msg = sprintf(__("Add photo (max %dkb)", WPVGB_DOMAIN), $opts['maxImgSizKb']) . ":";
            ecu_upload_form_core($msg);
            ecu_upload_form_preview();
+		*/ 
         ?>
       </div>       
       <!-- End Image Upload section -->
