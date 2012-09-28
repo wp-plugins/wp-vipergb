@@ -21,7 +21,8 @@ function vgb_GetGuestbook( $opts=array() )
         'showBrowsers' => true,     //Show browser/OS icons in guestbook entries  
         'showFlags'    => true,     //Show national flags in guestbook entries (REQUIRES OZH IP2NATION)
         'hideCred'     => false,    //Omit "Powered by WP-ViperGB" (please don't though :))
-        'showCredLink' => false     //Include a link to the project page in the "Powered by WP-ViperGP" (would be appreciated :))
+        'showCredLink' => false,    //Include a link to the project page in the "Powered by WP-ViperGP" (would be appreciated :))
+        'disallowAnon' => false		//Don't allow anonymous signatures (aka only logged-in users can sign)
          );       
     $opts = wp_parse_args( $opts, $defaults );
 
@@ -244,6 +245,10 @@ function vgb_get_sign_pg($opts)
    <div id="gbSignWrap" class="page-nav">
     <form action="<?php echo get_option("siteurl")?>/wp-comments-post.php" method="post" id="commentform">
      
+     <?php if( $opts['disallowAnon'] && !$user->ID ) : 
+     	_e('Sorry, but only registered users are allowed to sign this guestbook.<br />Please create a user account, or login to sign.',WPVGB_DOMAIN);
+	else: ?>
+	
      <!-- Name/Email/Homepage section -->
      <table id="gbSignPersonal">
       <tr>
@@ -267,7 +272,8 @@ function vgb_get_sign_pg($opts)
        <td>
         <?php if($user->ID):?> <input type="text" name="url" id="url" value="<?php echo $user->user_url?>" disabled="disabled" size="30" />
         <?php else:         ?> <input type="text" name="url" id="url" value="<?php echo esc_url($commenter['comment_author_url'])?>" size="30" />
-        <?php endif; ?> (<?php _e('optional', WPVGB_DOMAIN)?>)
+        <?php endif; ?>
+        <?php if(!$opts['disallowAnon']) _e('(optional)', WPVGB_DOMAIN); ?>
        </td>
       </tr> 
      </table>
@@ -281,7 +287,7 @@ function vgb_get_sign_pg($opts)
          </td>
        </tr>
      </table>
-     <?php if( $user->ID ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout", WPVGB_DOMAIN) . "</a></b>."; ?>
+     <?php if( $user->ID && !$opts['disallowAnon'] ) echo __("*If you'd like to customize these values, please ", WPVGB_DOMAIN) . "<b><a href=\"". wp_logout_url( $_SERVER['REQUEST_URI'] ) . "\">" . __("Logout", WPVGB_DOMAIN) . "</a></b>."; ?>
      <!-- End Name/Email section -->
      
      <!-- Text section -->
@@ -293,6 +299,7 @@ function vgb_get_sign_pg($opts)
        <input type='hidden' name='redirect_to' value='<?php echo htmlspecialchars(get_permalink()) ?>' />
      </div>
      <!-- EndText area section -->
+     <?php endif; ?>
     </form>
           
     <?php
