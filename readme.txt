@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
 Tested up to: 3.3.1
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -54,6 +54,9 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+= 1.3.0 (2012-10-02) =
+* New option: Digg-style pagination (thanks Sascha Nebel!)
+
 = 1.2.1 (2012-09-28) =
 * New option: only allow registered blog users to sign the guestbook (to discourage spammers)
 * The 'guestbook page' dropdown in the admin panel now lists both published and private pages

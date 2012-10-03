@@ -1,6 +1,8 @@
 <?php
 //Include the comment-upload handler plugin
 //ECU Code require_once('easy-comment-uploads/main.php');
+//Include the diggstyle pagination
+require_once('_diggstyle.php');
 
 
 /**
@@ -22,7 +24,8 @@ function vgb_GetGuestbook( $opts=array() )
         'showFlags'    => true,     //Show national flags in guestbook entries (REQUIRES OZH IP2NATION)
         'hideCred'     => false,    //Omit "Powered by WP-ViperGB" (please don't though :))
         'showCredLink' => false,    //Include a link to the project page in the "Powered by WP-ViperGP" (would be appreciated :))
-        'disallowAnon' => false		//Don't allow anonymous signatures (aka only logged-in users can sign)
+        'disallowAnon' => false,	//Don't allow anonymous signatures (aka only logged-in users can sign)
+        'diggPagination'=>false		//Use Digg-style pagination (rather than this plugin's original style)
          );       
     $opts = wp_parse_args( $opts, $defaults );
 
@@ -71,7 +74,7 @@ function vgb_get_current_page_num()
 /**
   * Get the header: Show Guestbook | Sign Guestbook, and *maybe* paged nav links
   */
-function vgb_get_header( $itemTotal, $entriesPerPg )
+function vgb_get_header( $itemTotal, $entriesPerPg, $diggPagination )
 {
     //Comment
     global $vgb_name, $vgb_version;
@@ -89,24 +92,46 @@ function vgb_get_header( $itemTotal, $entriesPerPg )
     $retVal .= __('Sign Guestbook', WPVGB_DOMAIN);
     if( $isListingPg ) $retVal .= "</a>";
     $retVal .= "</div>";
-    
-    //Paged nav links
+
+	//For Digg-style pagination
+	if($diggPagination == 1)
+	{
+    	$retVal .= '<div id="gbPageLinks">';
+    	if ($isListingPg)
+	        $retVal .= $itemTotal . ' ' . __('entries',WPVGB_DOMAIN);
+	    $retVal .= "</div>";
+	    $retVal .= "</div>";
+    }	
+	
+    //Paged/paginated nav links
     if($isListingPg && $itemTotal > $entriesPerPg)
     {
         $curPage = vgb_get_current_page_num();
         $maxPages = ceil($itemTotal/$entriesPerPg);
-        $retVal .= '<div id="gbPageLinks">' . __('Page',WPVGB_DOMAIN) . ': ';
+        if($diggPagination == 0) $retVal .= '<div id="gbPageLinks">' . __('Page',WPVGB_DOMAIN) . ': ';
         if( $maxPages > 1 )
         {
-            for( $i = 1; $i <= $maxPages; $i++ )
-            {
-                if( $curPage == $i || (!$curPage && $i==1) ) $retVal .= "(" . $i . ") ";
-                else                                         $retVal .= "<a href=\"".htmlspecialchars(add_query_arg(VB_PAGED_ARG, $i))."\">$i</a> ";
-            }
+        	//Original-style paged nav links
+        	if( $diggPagination == 0 )
+			{
+            	for( $i = 1; $i <= $maxPages; $i++ )
+            	{
+                	if( $curPage == $i || (!$curPage && $i==1) ) $retVal .= "(" . $i . ") ";
+                	else                                         $retVal .= "<a href=\"".htmlspecialchars(add_query_arg(VB_PAGED_ARG, $i))."\">$i</a> ";
+            	}
+			}
+			//Digg-style paginated nav links
+			else
+			{
+				//Digg-Style Pagination
+            	$retVal .= '<div style="text-align:center">';
+            	$retVal .= getPaginationString($curPage, $itemTotal, $entriesPerPg, 1, get_permalink(), '?cpage=');
+            	$retVal .= '</div>';
+			}
         }
-        $retVal .= "</div>";
+        if($diggPagination == 0) $retVal .= "</div>";
     }
-    $retVal .= "</div>";
+    if($diggPagination == 0) $retVal .= "</div>";
     return $retVal;
 }
 
@@ -126,7 +151,7 @@ function vgb_get_listing_pg($opts)
     $commentTotal = count($comments);
     
     //Output the header
-    echo vgb_get_header($commentTotal, $opts['entriesPerPg']);
+    echo vgb_get_header($commentTotal, $opts['entriesPerPg'], $opts['diggPagination']);
     
     //Check for "no entries"
     if( $commentTotal == 0 ):
@@ -238,7 +263,7 @@ function vgb_get_sign_pg($opts)
     ob_start();
     
     //Output the header
-    echo vgb_get_header(0, $opts['entriesPerPg']);
+    echo vgb_get_header(0, $opts['entriesPerPg'], $opts['diggPagination']);
     
     //And output the page!
    ?>

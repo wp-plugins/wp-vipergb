@@ -3,7 +3,7 @@
 Plugin Name: WP-ViperGB
 Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
 Author: Justin Klein
-Version: 1.2.1
+Version: 1.3.0
 Author URI: http://www.justin-klein.com/
 Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
@@ -30,14 +30,14 @@ Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 global $vgb_name, $vgb_homepage, $vgb_version;
 $vgb_name               = "WP-ViperGB";
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.2.1";
+$vgb_version            = "1.3.0";
 
 //Our plugin options
 global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
 global $opt_vgb_allow_upload, $opt_vgb_allow_upload, $opt_vgb_max_upload_siz;
 global $opt_vgb_no_anon_signers;
 global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
-global $opt_vgb_hidesponsor;
+global $opt_vgb_hidesponsor, $opt_vgb_digg_pagination;
 $opt_vgb_page           = 'vgb_page';
 $opt_vgb_style          = 'vgb_style';
 $opt_vgb_items_per_pg   = 'vgb_items_per_pg';
@@ -49,6 +49,7 @@ $opt_vgb_show_browsers  = 'vgb_show_browsers';
 $opt_vgb_show_flags     = 'vgb_show_flags';
 $opt_vgb_show_cred_link = 'vgb_show_cred_link';
 $opt_vgb_hidesponsor    = 'vgb_hidesponsor';
+$opt_vgb_digg_pagination= 'vgb_digg_pagination';
 
 //Load the textdomain for localization
 define('WPVGB_DOMAIN', 'wpvipergb');
@@ -69,7 +70,7 @@ function vgb_replace_content($content)
     if( $post->ID != get_option($opt_vgb_page) ) return $content;
     
     global $opt_vgb_reverse, $opt_vgb_allow_upload, $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
-	global $opt_vgb_no_anon_signers;
+	global $opt_vgb_no_anon_signers, $opt_vgb_digg_pagination;
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
     return vgb_GetGuestbook(array('entriesPerPg' => get_option($opt_vgb_items_per_pg),
                                   'reverseOrder' => get_option($opt_vgb_reverse),
@@ -78,7 +79,8 @@ function vgb_replace_content($content)
                                   'showBrowsers' => get_option($opt_vgb_show_browsers),
                                   'showFlags'    => get_option($opt_vgb_show_flags),
                                   'showCredLink' => get_option($opt_vgb_show_cred_link),
-								  'disallowAnon' => get_option($opt_vgb_no_anon_signers)));                                         
+								  'disallowAnon' => get_option($opt_vgb_no_anon_signers),
+								  'diggPagination'=>get_option($opt_vgb_digg_pagination)));                                         
 }
 
 

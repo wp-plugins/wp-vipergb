@@ -8,6 +8,7 @@ add_option($opt_vgb_show_browsers, true);
 add_option($opt_vgb_show_flags, true);
 add_option($opt_vgb_style, "Default");
 add_option($opt_vgb_show_cred_link, false);
+add_option($opt_vgb_digg_pagination, false);
 
 /*
  * Tell WP about the Admin page
@@ -40,7 +41,7 @@ function vgb_admin_page()
     global $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
 	global $opt_vgb_no_anon_signers;
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
-    global $opt_vgb_hidesponsor;
+    global $opt_vgb_hidesponsor, $opt_vgb_digg_pagination;
     ?>
     <div class="wrap">
       <?php
@@ -58,6 +59,7 @@ function vgb_admin_page()
           update_option( $opt_vgb_show_browsers, $_POST[$opt_vgb_show_browsers] );
           update_option( $opt_vgb_show_flags, $_POST[$opt_vgb_show_flags] );
           update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
+		  update_option( $opt_vgb_digg_pagination, $_POST[$opt_vgb_digg_pagination] );
           ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
       }
       if( isset($_REQUEST[$opt_vgb_hidesponsor]) )
@@ -106,6 +108,7 @@ function vgb_admin_page()
         
         <h4><?php _e('Extra Settings', WPVGB_DOMAIN)?>:</h4>
         <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> <?php _e('Entries Per Page', WPVGB_DOMAIN)?><br />
+		<input type="checkbox" name="<?php echo $opt_vgb_digg_pagination?>" value="1" <?php echo get_option($opt_vgb_digg_pagination)?'checked="checked"':''?> /> <?php _e('Use Digg-style pagination', WPVGB_DOMAIN)?><br />
         <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> <?php _e('Reverse Order (list from oldest to newest)', WPVGB_DOMAIN)?><br />
 <!--ECU Code        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> <?php _e('Allow Image Uploads', WPVGB_DOMAIN)?><br /> -->
 <!--ECU Code        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> <?php _e('Max Image Filesize (kb)', WPVGB_DOMAIN)?><br /><br /> -->
