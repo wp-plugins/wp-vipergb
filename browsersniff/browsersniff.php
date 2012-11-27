@@ -65,6 +65,7 @@ function pri_browser_string($ua, $image = false, $between = 'on') {
 }
 
 function pri_detect_browser ($ua) {
+    $browser_name= $browser_code= $browser_ver= $os_name= $os_code= $os_ver= $pda_name= $pda_code= $pda_ver= "";
 	$ua = preg_replace("/FunWebProducts/i", "", $ua);
 	if (preg_match('#MovableType[ /]([a-zA-Z0-9.]+)#i', $ua, $matches)) {
 		$browser_name = 'MovableType';
