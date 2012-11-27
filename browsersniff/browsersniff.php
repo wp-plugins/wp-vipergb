@@ -504,6 +504,7 @@ function pri_friendly_string (	$browser_name = '', $browser_code = '', $browser_
 }
 
 function pri_windows_detect_os ($ua) {
+    $os_name= $os_code= $os_ver= $pda_name= $pda_code= $pda_ver= "";
 	if (preg_match('/Windows 95/i', $ua) || preg_match('/Win95/', $ua)) {
 		$os_name = "Windows";
 		$os_code = "windows";
@@ -568,6 +569,7 @@ function pri_windows_detect_os ($ua) {
 }
 
 function pri_unix_detect_os ($ua) {
+    $os_name= $os_code= $os_ver="";
 	if (preg_match('/Linux/i', $ua)) {
 		$os_name = "Linux";
 		$os_code = "linux";

@@ -305,10 +305,13 @@ function vgb_get_sign_pg($opts)
      <table>
        <tr>
          <td>
-           <?php remove_action('comment_form', 'show_subscription_checkbox'); ?>
-           <?php remove_action('comment_form', 'subscribe_reloaded_show'); ?>
-           <?php remove_action('comment_form', 'jfb_show_comment_button'); ?>
-           <?php do_action('comment_form', $post->ID); ?>
+           <?php
+           remove_action('comment_form', 'show_subscription_checkbox');
+           remove_action('comment_form', 'subscribe_reloaded_show');
+           remove_action('comment_form', 'jfb_show_comment_button');
+           global $post;
+           do_action('comment_form', $post->ID);
+           ?>
          </td>
        </tr>
      </table>
