@@ -167,10 +167,10 @@ function vgb_get_listing_pg($opts)
     ?>
     <div id="gbEntriesWrap">
     <?php foreach( $comments as $comment ): ?>
-    <table class="gbEntry page-nav" cellspacing="0">
+    <table class="gbEntry page-nav">
      <tr>
       <td class="gbEntryLeft" rowspan="3">
-       <table cellspacing="0">
+       <table class="nocellspacing">
         <tr>
          <td class="leftSide"><?php _e('EntryNo', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
@@ -181,14 +181,14 @@ function vgb_get_listing_pg($opts)
          </td>
         </tr>
         <tr>
-         <td valign="top" class="leftSide"><?php _e('Date', WPVGB_DOMAIN)?>:</td>
+         <td class="leftSide vtop"><?php _e('Date', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
            <?php echo get_comment_date('l')?><br /><?php echo get_comment_time(__('H:i',WPVGB_DOMAIN))?><br /><?php echo get_comment_date(__('m.d.Y',WPVGB_DOMAIN))?>
          </td>
         </tr>
        </table>
       </td>
-      <td class="gbEntryTop" valign="middle" align="left" >
+      <td class="gbEntryTop" >
        <div class="gbAuthor">
         <img alt="ip" src="<?php echo vgb_get_data_url()?>img/ip.gif" /> <?php echo $comment->comment_author?><?php edit_comment_link('..', '');?>
        </div>
@@ -282,6 +282,7 @@ function vgb_get_sign_pg($opts)
         <?php if($user->ID):?> <input type="text" name="author" id="author" value="<?php echo $user->display_name?>" disabled="disabled" size="30" maxlength="40" />
         <?php else:         ?> <input type="text" name="author" id="author" value="<?php echo $commenter['comment_author']?>" size="30" maxlength="40" />
         <?php endif; ?>
+        <?php if(!$opts['disallowAnon']) _e('(required)', WPVGB_DOMAIN); ?>
        </td>
       </tr>
       <tr>
@@ -290,6 +291,7 @@ function vgb_get_sign_pg($opts)
         <?php if($user->ID):?> <input type="text" name="email" id="email" value="<?php echo $user->user_email?>" disabled="disabled" size="30" maxlength="40" />
         <?php else:         ?> <input type="text" name="email" id="email" value="<?php echo $commenter['comment_author_email']?>" size="30" maxlength="40" />
         <?php endif; ?>
+        <?php if(!$opts['disallowAnon']) _e('(required)', WPVGB_DOMAIN); ?>
        </td>
       </tr>
       <tr>

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
 Tested up to: 3.4.1
-Stable tag: 1.3.4
+Stable tag: 1.3.5
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -54,6 +54,13 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+= 1.3.5 (2012-12-26) =
+* Add "Prev" & "Next" strings in digg-style pagination to .po for localization
+* Add "required" strings next to "Name" and "Email"
+* Update the main .po file with the above & some other new items
+* Convert some HTML5-invalid attributes (i.e. cellspacing, valign) to CSS 
+* Updated Hungarian translations
+
 = 1.3.4 (2012-12-19) =
 * Add Spanish translation (Thanks William Galeano @ http://ingenero.com.co)
 

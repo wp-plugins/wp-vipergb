@@ -20,6 +20,14 @@
     clear:both;
 }
 
+#gbEntriesWrap .nocellspacing{
+    border-spacing:0;
+}
+
+#gbEntriesWrap .vtop{
+    vertical-align:top;
+}
+
 #gbCredit{
     display:block;
     margin-top: -7px;
@@ -32,6 +40,7 @@
     padding:0;
     margin-bottom: 7px;
     border:1px solid #888888;
+    border-spacing:0;
 }
 
 .gbEntryTop{

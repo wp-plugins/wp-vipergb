@@ -40,9 +40,9 @@ function getPaginationString($page = 1, $totalitems, $limit = 10, $adjacents = 1
 
 		//previous button
 		if ($page > 1) 
-			$pagination .= "<a href=\"$targetpage$pagestring$prev\">&laquo; prev</a>";
+			$pagination .= "<a href=\"$targetpage$pagestring$prev\">&laquo; ".__('prev', WPVGB_DOMAIN)."</a>";
 		else
-			$pagination .= "<span class=\"disabled\">&laquo; prev</span>";	
+			$pagination .= "<span class=\"disabled\">&laquo; ".__('prev', WPVGB_DOMAIN)."</span>";	
 		
 		//pages	
 		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
@@ -106,9 +106,9 @@ function getPaginationString($page = 1, $totalitems, $limit = 10, $adjacents = 1
 		
 		//next button
 		if ($page < $counter - 1) 
-			$pagination .= "<a href=\"" . $targetpage . $pagestring . $next . "\">next &raquo;</a>";
+			$pagination .= "<a href=\"" . $targetpage . $pagestring . $next . "\">".__('next', WPVGB_DOMAIN)." &raquo;</a>";
 		else
-			$pagination .= "<span class=\"disabled\">next &raquo;</span>";
+			$pagination .= "<span class=\"disabled\">".__('next', WPVGB_DOMAIN)." &raquo;</span>";
 		$pagination .= "</div>\n";
 	}
 	

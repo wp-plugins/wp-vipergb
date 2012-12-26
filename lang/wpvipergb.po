@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-07 20:30+0700\n"
-"PO-Revision-Date: 2011-01-07 20:31+0700\n"
+"POT-Creation-Date: 2012-12-25 11:54-0800\n"
+"PO-Revision-Date: 2012-12-25 11:54-0800\n"
 "Last-Translator: Justin Klein <justin@justin-klein.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,192 +11,226 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../_admin_menu.php:27
+#: ../_admin_menu.php:29
 msgid "Settings"
 msgstr ""
 
-#: ../_admin_menu.php:57
+#: ../_admin_menu.php:63
 msgid "Options saved."
 msgstr ""
 
-#: ../_admin_menu.php:61
+#: ../_admin_menu.php:69
 msgid "WP-ViperGB Options"
 msgstr ""
 
-#: ../_admin_menu.php:63
+#: ../_admin_menu.php:71
 msgid "Manage Entries"
 msgstr ""
 
-#: ../_admin_menu.php:66
-msgid "To add a Guestbook to your blog, simply create a new page, select it in the first combobox below, and click \"Save.\""
-msgstr ""
-
-#: ../_admin_menu.php:69
-msgid "Main Settings"
-msgstr ""
-
-#: ../_admin_menu.php:71
-msgid "Guestbook Page"
+#: ../_admin_menu.php:75
+msgid ""
+"To add a Guestbook to your blog, simply create a new page, select it in the "
+"first combobox below, and click \"Save.\""
 msgstr ""
 
 #: ../_admin_menu.php:82
+msgid "Main Settings"
+msgstr ""
+
+#: ../_admin_menu.php:84
+msgid "Guestbook Page"
+msgstr ""
+
+#: ../_admin_menu.php:95
 msgid "Guestbook Style"
 msgstr ""
 
-#: ../_admin_menu.php:96
+#: ../_admin_menu.php:109
 msgid "Extra Settings"
 msgstr ""
 
-#: ../_admin_menu.php:97
-msgid "Reverse Order (list from oldest to newest)"
-msgstr ""
-
-#: ../_admin_menu.php:98
+#: ../_admin_menu.php:110
 msgid "Entries Per Page"
 msgstr ""
 
-#: ../_admin_menu.php:99
+#: ../_admin_menu.php:111
+msgid "Use Digg-style pagination"
+msgstr ""
+
+#: ../_admin_menu.php:112
+msgid "Reverse Order (list from oldest to newest)"
+msgstr ""
+
+#: ../_admin_menu.php:113
 msgid "Allow Image Uploads"
 msgstr ""
 
-#: ../_admin_menu.php:100
+#: ../_admin_menu.php:114
 msgid "Max Image Filesize (kb)"
 msgstr ""
 
-#: ../_admin_menu.php:101
+#: ../_admin_menu.php:115
+msgid "Don't allow anonymous signatures (aka only allow registered users)"
+msgstr ""
+
+#: ../_admin_menu.php:116
 msgid "Show Browser &amp; OS Icons"
 msgstr ""
 
-#: ../_admin_menu.php:102
+#: ../_admin_menu.php:117
 #, php-format
 msgid "Show Flag Icons (Requires %s)"
 msgstr ""
 
-#: ../_admin_menu.php:103
+#: ../_admin_menu.php:118
 #, php-format
-msgid "Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much appreciated)"
+msgid ""
+"Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much "
+"appreciated)"
 msgstr ""
 
-#: ../_admin_menu.php:105
+#: ../_admin_menu.php:120
 msgid "Save"
 msgstr ""
 
-#: ../_admin_menu.php:109
+#: ../_admin_menu.php:124
 msgid "Development"
 msgstr ""
 
-#: ../_admin_menu.php:110
-msgid "Many hours have gone into making this plugin as clean and easy to use as possible. Although I offer it to you freely, please keep in mind that each hour spent on it was an hour that could've also gone towards income-generating work. If you find it useful, a small donation would be greatly appreciated :)"
+#: ../_admin_menu.php:125
+msgid ""
+"Many hours have gone into making this plugin as clean and easy to use as "
+"possible. Although I offer it to you freely, please keep in mind that each "
+"hour spent on it was an hour that could've also gone towards income-"
+"generating work. If you find it useful, a small donation would be greatly "
+"appreciated :)"
 msgstr ""
 
-#: ../_admin_menu.php:121
+#: ../_admin_menu.php:136
 msgid "Credits"
 msgstr ""
 
-#: ../_admin_menu.php:122
-msgid "WP-ViperGB takes advantage of code from several other plugins.  These are:"
+#: ../_admin_menu.php:137
+msgid ""
+"WP-ViperGB takes advantage of code from several other plugins.  These are:"
 msgstr ""
 
-#: ../_admin_menu.php:124
-msgid "Allow users to embed images in their guestbook entries. <i>This functionality is included by default, but must be explicitly enabled above.</i>"
+#: ../_admin_menu.php:139
+msgid ""
+"Allow users to embed images in their guestbook entries. <i>This "
+"functionality is included by default, but must be explicitly enabled above.</"
+"i>"
 msgstr ""
 
-#: ../_admin_menu.php:125
-msgid "Show a browser and operating system icon in each visitor's guestbook entry.  <i>This functionality is included by default.</i>"
+#: ../_admin_menu.php:140
+msgid ""
+"Show a browser and operating system icon in each visitor's guestbook entry.  "
+"<i>This functionality is included by default.</i>"
 msgstr ""
 
-#: ../_admin_menu.php:126
-msgid "Show a national flag in each visitor's guestbook entry.  <i>This plugin must be installed separately.</i>"
+#: ../_admin_menu.php:141
+msgid ""
+"Show a national flag in each visitor's guestbook entry.  <i>This plugin must "
+"be installed separately.</i>"
 msgstr ""
 
-#: ../_output_guestbook.php:84
-msgid "Show Guestbook"
+#: ../_diggstyle.php:43 ../_diggstyle.php:45
+msgid "prev"
+msgstr ""
+
+#: ../_diggstyle.php:109 ../_diggstyle.php:111
+msgid "next"
 msgstr ""
 
 #: ../_output_guestbook.php:88
+msgid "Show Guestbook"
+msgstr ""
+
+#: ../_output_guestbook.php:92
 msgid "Sign Guestbook"
 msgstr ""
 
-#: ../_output_guestbook.php:97
+#: ../_output_guestbook.php:101
+msgid "entries"
+msgstr ""
+
+#: ../_output_guestbook.php:111
 msgid "Page"
 msgstr ""
 
-#: ../_output_guestbook.php:132
+#: ../_output_guestbook.php:158
 msgid "No entries yet"
 msgstr ""
 
-#: ../_output_guestbook.php:149
+#: ../_output_guestbook.php:175
 msgid "EntryNo"
 msgstr ""
 
-#: ../_output_guestbook.php:158
+#: ../_output_guestbook.php:184
 msgid "Date"
 msgstr ""
 
-#: ../_output_guestbook.php:160
+#: ../_output_guestbook.php:186
 msgid "H:i"
 msgstr ""
 
-#: ../_output_guestbook.php:160
+#: ../_output_guestbook.php:186
 msgid "m.d.Y"
 msgstr ""
 
-#: ../_output_guestbook.php:188
+#: ../_output_guestbook.php:214
 msgid "This entry is awaiting moderation"
 msgstr ""
 
-#: ../_output_guestbook.php:195
+#: ../_output_guestbook.php:221
 msgid "hidden"
 msgstr ""
 
-#: ../_output_guestbook.php:250
+#: ../_output_guestbook.php:234 ../_output_guestbook.php:236
+msgid "Powered by"
+msgstr ""
+
+#: ../_output_guestbook.php:274
+msgid ""
+"Sorry, but only registered users are allowed to sign this guestbook.<br /"
+">Please create a user account, or login to sign."
+msgstr ""
+
+#: ../_output_guestbook.php:280
 msgid "Name"
 msgstr ""
 
-#: ../_output_guestbook.php:258
-msgid "Email"
-msgstr ""
-
-#: ../_output_guestbook.php:266
-msgid "Homepage"
-msgstr ""
-
-#: ../_output_guestbook.php:270
-msgid "optional"
-msgstr ""
-
-#: ../_output_guestbook.php:282
-msgid "*If you'd like to customize these values, please "
-msgstr ""
-
-#: ../_output_guestbook.php:282
-msgid "Logout"
-msgstr ""
-
-#: ../_output_guestbook.php:287
-msgid "Text"
+#: ../_output_guestbook.php:285 ../_output_guestbook.php:294
+msgid "(required)"
 msgstr ""
 
 #: ../_output_guestbook.php:289
+msgid "Email"
+msgstr ""
+
+#: ../_output_guestbook.php:298
+msgid "Homepage"
+msgstr ""
+
+#: ../_output_guestbook.php:303
+msgid "(optional)"
+msgstr ""
+
+#: ../_output_guestbook.php:320
+msgid "*If you'd like to customize these values, please "
+msgstr ""
+
+#: ../_output_guestbook.php:320
+msgid "Logout"
+msgstr ""
+
+#: ../_output_guestbook.php:325
+msgid "Text"
+msgstr ""
+
+#: ../_output_guestbook.php:327
 msgid "Send"
 msgstr ""
-
-#: ../_output_guestbook.php:304
-#, php-format
-msgid "Add photo (max %dkb)"
-msgstr ""
-
-#: ../easy-comment-uploads/main.php:86
-msgid "Upload Files"
-msgstr ""
-
-#: ../easy-comment-uploads/main.php:87
-msgid "You can include images or files in your comment by selecting them below. Once you select a file, it will be uploaded and a link to it added to your comment. You can upload as many images or files as you like and they will all be added to your comment."
-msgstr ""
-
-#: ../easy-comment-uploads/main.php:88
-msgid "Select File"
-msgstr ""
-
