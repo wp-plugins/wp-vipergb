@@ -47,8 +47,6 @@ function vgb_admin_page()
       <?php
       if( isset($_POST['opts_updated']) )
       {
-          if( get_option($opt_vgb_page) != $_POST[$opt_vgb_page] )
-            vgb_auth($vgb_name, $vgb_version, 2, "SET: " . $_POST[$opt_vgb_page]);
           update_option( $opt_vgb_page, $_POST[$opt_vgb_page] );
           update_option( $opt_vgb_style, $_POST[$opt_vgb_style] );
           update_option( $opt_vgb_items_per_pg, $_POST[$opt_vgb_items_per_pg] );

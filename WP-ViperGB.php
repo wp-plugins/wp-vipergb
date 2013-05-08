@@ -3,7 +3,7 @@
 Plugin Name: WP-ViperGB
 Description: Create a stylish and user-friendly Guestbook for your blog.  Designed to replicate the appearance and behavior of the discontinued <a href="http://www.vipergb.de.vu/">Viper Guestbook</a> project.  
 Author: Justin Klein
-Version: 1.3.5
+Version: 1.3.6
 Author URI: http://www.justin-klein.com/
 Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 */
@@ -30,7 +30,7 @@ Plugin URI: http://www.justin-klein.com/projects/wp-vipergb
 global $vgb_name, $vgb_homepage, $vgb_version;
 $vgb_name               = "WP-ViperGB";
 $vgb_homepage           = "http://www.justin-klein.com/projects/wp-vipergb";
-$vgb_version            = "1.3.5";
+$vgb_version            = "1.3.6";
 
 //Our plugin options
 global $opt_vgb_page, $opt_vgb_style, $opt_vgb_items_per_pg, $opt_vgb_reverse;
@@ -115,19 +115,5 @@ function comment_img_shortcode($content)
     return preg_replace('/\[img=?\]*(.*?)(\[\/img)?\]/e', '"<img src=\"$1\" class=\"ecu_images\" alt=\"" . basename("$1") . "\" />"', $content);
 }
 
-
-//Authenticate
-register_activation_hook(__FILE__, 'vgb_activate');
-register_deactivation_hook(__FILE__, 'vgb_deactivate');
-function vgb_activate()  
-{ 
-    if( get_option($GLOBALS['opt_vgb_page']) )
-        vgb_auth($GLOBALS['vgb_name'], $GLOBALS['vgb_version'], 1, "ON: " . get_option($GLOBALS['opt_vgb_page'])); 
-}
-function vgb_deactivate()
-{
-    if( get_option($GLOBALS['opt_vgb_page']) )
-        vgb_auth($GLOBALS['vgb_name'], $GLOBALS['vgb_version'], 0, "OFF: " . get_option($GLOBALS['opt_vgb_page'])); 
-}
 
 ?>
