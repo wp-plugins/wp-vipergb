@@ -3,7 +3,7 @@ Contributors: Justin_K
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BUMTK5NRRG8UN
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: 1.3.10
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
