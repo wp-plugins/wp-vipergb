@@ -47,21 +47,21 @@ function vgb_admin_page()
       <?php
       if( isset($_POST['opts_updated']) )
       {
-          update_option( $opt_vgb_page, $_POST[$opt_vgb_page] );
-          update_option( $opt_vgb_style, $_POST[$opt_vgb_style] );
-          update_option( $opt_vgb_items_per_pg, $_POST[$opt_vgb_items_per_pg] );
-          update_option( $opt_vgb_reverse, $_POST[$opt_vgb_reverse] );
-          update_option( $opt_vgb_allow_upload, $_POST[$opt_vgb_allow_upload] );
-          update_option( $opt_vgb_max_upload_siz, $_POST[$opt_vgb_max_upload_siz] );
-		  update_option( $opt_vgb_no_anon_signers, $_POST[$opt_vgb_no_anon_signers] );
-          update_option( $opt_vgb_show_browsers, $_POST[$opt_vgb_show_browsers] );
-          update_option( $opt_vgb_show_flags, $_POST[$opt_vgb_show_flags] );
-          update_option( $opt_vgb_show_cred_link, $_POST[$opt_vgb_show_cred_link] );
-		  update_option( $opt_vgb_digg_pagination, $_POST[$opt_vgb_digg_pagination] );
+          update_option( $opt_vgb_page, esc_html($_POST[$opt_vgb_page] ));
+          update_option( $opt_vgb_style, esc_html($_POST[$opt_vgb_style] ));
+          update_option( $opt_vgb_items_per_pg, esc_html($_POST[$opt_vgb_items_per_pg] ));
+          update_option( $opt_vgb_reverse, esc_html($_POST[$opt_vgb_reverse] ));
+          update_option( $opt_vgb_allow_upload, esc_html($_POST[$opt_vgb_allow_upload] ));
+          update_option( $opt_vgb_max_upload_siz, esc_html($_POST[$opt_vgb_max_upload_siz] ));
+		  update_option( $opt_vgb_no_anon_signers, esc_html($_POST[$opt_vgb_no_anon_signers] ));
+          update_option( $opt_vgb_show_browsers, esc_html($_POST[$opt_vgb_show_browsers] ));
+          update_option( $opt_vgb_show_flags, esc_html($_POST[$opt_vgb_show_flags] ));
+          update_option( $opt_vgb_show_cred_link, esc_html($_POST[$opt_vgb_show_cred_link] ));
+		  update_option( $opt_vgb_digg_pagination, esc_html($_POST[$opt_vgb_digg_pagination] ));
           ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
       }
       if( isset($_REQUEST[$opt_vgb_hidesponsor]) )
-          update_option($opt_vgb_hidesponsor, $_REQUEST[$opt_vgb_hidesponsor]);
+          update_option($opt_vgb_hidesponsor, esc_html($_REQUEST[$opt_vgb_hidesponsor]));
       ?>
       <h2 style="clear: none">
          <?php _e('WP-ViperGB Options', WPVGB_DOMAIN) ?>
