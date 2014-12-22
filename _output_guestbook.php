@@ -124,7 +124,7 @@ function vgb_get_header( $itemTotal, $entriesPerPg, $diggPagination )
 			else
 			{
 				//Digg-Style Pagination
-            	$retVal .= '<div style="text-align:center">';
+            	$retVal .= '<div class="gbPagination">';
             	$retVal .= getPaginationString($curPage, $itemTotal, $entriesPerPg, 1, get_permalink(), '?cpage=');
             	$retVal .= '</div>';
 			}

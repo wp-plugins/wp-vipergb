@@ -2,105 +2,112 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-25 11:54-0800\n"
-"PO-Revision-Date: 2012-12-25 11:54-0800\n"
+"POT-Creation-Date: 2014-12-22 02:51-0800\n"
+"PO-Revision-Date: 2014-12-22 02:52-0800\n"
 "Last-Translator: Justin Klein <justin@justin-klein.com>\n"
 "Language-Team: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../_admin_menu.php:29
 msgid "Settings"
 msgstr ""
 
-#: ../_admin_menu.php:63
+#: ../_admin_menu.php:61
 msgid "Options saved."
 msgstr ""
 
-#: ../_admin_menu.php:69
+#: ../_admin_menu.php:67
 msgid "WP-ViperGB Options"
 msgstr ""
 
-#: ../_admin_menu.php:71
+#: ../_admin_menu.php:69
 msgid "Manage Entries"
 msgstr ""
 
-#: ../_admin_menu.php:75
+#: ../_admin_menu.php:73
 msgid ""
 "To add a Guestbook to your blog, simply create a new page, select it in the "
 "first combobox below, and click \"Save.\""
 msgstr ""
 
-#: ../_admin_menu.php:82
+#: ../_admin_menu.php:80
 msgid "Main Settings"
 msgstr ""
 
-#: ../_admin_menu.php:84
+#: ../_admin_menu.php:82
 msgid "Guestbook Page"
 msgstr ""
 
-#: ../_admin_menu.php:95
+#: ../_admin_menu.php:93
 msgid "Guestbook Style"
 msgstr ""
 
-#: ../_admin_menu.php:109
+#: ../_admin_menu.php:107
 msgid "Extra Settings"
 msgstr ""
 
-#: ../_admin_menu.php:110
+#: ../_admin_menu.php:108
 msgid "Entries Per Page"
 msgstr ""
 
-#: ../_admin_menu.php:111
+#: ../_admin_menu.php:109
 msgid "Use Digg-style pagination"
 msgstr ""
 
-#: ../_admin_menu.php:112
+#: ../_admin_menu.php:109
+#, php-format
+msgid "Please enable %s when using this option."
+msgstr ""
+
+#: ../_admin_menu.php:110
 msgid "Reverse Order (list from oldest to newest)"
 msgstr ""
 
-#: ../_admin_menu.php:113
+#: ../_admin_menu.php:111
 msgid "Allow Image Uploads"
 msgstr ""
 
-#: ../_admin_menu.php:114
+#: ../_admin_menu.php:112
 msgid "Max Image Filesize (kb)"
 msgstr ""
 
-#: ../_admin_menu.php:115
+#: ../_admin_menu.php:113
 msgid "Don't allow anonymous signatures (aka only allow registered users)"
 msgstr ""
 
-#: ../_admin_menu.php:116
+#: ../_admin_menu.php:114
 msgid "Show Browser &amp; OS Icons"
 msgstr ""
 
-#: ../_admin_menu.php:117
+#: ../_admin_menu.php:115
 #, php-format
 msgid "Show Flag Icons (Requires %s)"
 msgstr ""
 
-#: ../_admin_menu.php:118
+#: ../_admin_menu.php:116
 #, php-format
 msgid ""
 "Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much "
 "appreciated)"
 msgstr ""
 
-#: ../_admin_menu.php:120
+#: ../_admin_menu.php:118
 msgid "Save"
 msgstr ""
 
-#: ../_admin_menu.php:124
+#: ../_admin_menu.php:122
 msgid "Development"
 msgstr ""
 
-#: ../_admin_menu.php:125
+#: ../_admin_menu.php:123
 msgid ""
 "Many hours have gone into making this plugin as clean and easy to use as "
 "possible. Although I offer it to you freely, please keep in mind that each "
@@ -109,29 +116,29 @@ msgid ""
 "appreciated :)"
 msgstr ""
 
-#: ../_admin_menu.php:136
+#: ../_admin_menu.php:134
 msgid "Credits"
 msgstr ""
 
-#: ../_admin_menu.php:137
+#: ../_admin_menu.php:135
 msgid ""
 "WP-ViperGB takes advantage of code from several other plugins.  These are:"
 msgstr ""
 
-#: ../_admin_menu.php:139
+#: ../_admin_menu.php:137
 msgid ""
 "Allow users to embed images in their guestbook entries. <i>This "
 "functionality is included by default, but must be explicitly enabled above.</"
 "i>"
 msgstr ""
 
-#: ../_admin_menu.php:140
+#: ../_admin_menu.php:138
 msgid ""
 "Show a browser and operating system icon in each visitor's guestbook entry.  "
 "<i>This functionality is included by default.</i>"
 msgstr ""
 
-#: ../_admin_menu.php:141
+#: ../_admin_menu.php:139
 msgid ""
 "Show a national flag in each visitor's guestbook entry.  <i>This plugin must "
 "be installed separately.</i>"

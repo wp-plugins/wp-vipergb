@@ -3,8 +3,8 @@ Contributors: Justin_K
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BUMTK5NRRG8UN
 Tags: guestbook, vipergb, viper guestbook
 Requires at least: 2.5
-Tested up to: 4.0.1
-Stable tag: 1.3.12
+Tested up to: 4.1
+Stable tag: 1.3.13
 
 Create a stylish and user-friendly Guestbook for your Wordpress blog.  Designed to replicate the appearance and behavior of Viper Guestbook.
 
@@ -54,6 +54,14 @@ Customization options are discussed on the [plugin's website](http://www.justin-
 
 
 == Changelog ==
+= 1.3.13 (2014-12-22) =
+* Updated Norwegian translation
+* Add .gbPagination css class to avoid confusion with "pagination" (used in twentyfourteen & twentyfifteen)
+* Add a note to admin page about using pretty permalinks with digg-style pagination
+* CSS fixes for twentyfifteen
+* Set language of default .po file
+* Tested with WP4.1
+
 = 1.3.12 (2014-12-12) =
 * Added Norwegian translation (Thanks Hermod Svingerud)
 

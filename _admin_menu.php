@@ -106,7 +106,7 @@ function vgb_admin_page()
         
         <h4><?php _e('Extra Settings', WPVGB_DOMAIN)?>:</h4>
         <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> <?php _e('Entries Per Page', WPVGB_DOMAIN)?><br />
-		<input type="checkbox" name="<?php echo $opt_vgb_digg_pagination?>" value="1" <?php echo get_option($opt_vgb_digg_pagination)?'checked="checked"':''?> /> <?php _e('Use Digg-style pagination', WPVGB_DOMAIN)?><br />
+		<input type="checkbox" name="<?php echo $opt_vgb_digg_pagination?>" value="1" <?php echo get_option($opt_vgb_digg_pagination)?'checked="checked"':''?> /> <?php _e('Use Digg-style pagination', WPVGB_DOMAIN)?> (<?php echo sprintf(__("Please enable %s when using this option.", WPVGB_DOMAIN), "<a href='options-permalink.php' target='permalinks'>Pretty Permalinks</a>") ?>)<br />
         <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> <?php _e('Reverse Order (list from oldest to newest)', WPVGB_DOMAIN)?><br />
 <!--ECU Code        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> <?php _e('Allow Image Uploads', WPVGB_DOMAIN)?><br /> -->
 <!--ECU Code        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> <?php _e('Max Image Filesize (kb)', WPVGB_DOMAIN)?><br /><br /> -->

@@ -118,6 +118,13 @@
     border:1px solid #888888;
 }
 
+/*For twentyfifteen (which has huge font size)*/
+#content #primary #main .hentry .entry-content #gbSignWrap {
+	width: 100%;
+	padding: 0;
+}
+
+
 #gbSignPersonal{
     margin-top:5px;
     border:0;
@@ -164,23 +171,28 @@
 /***************************************************/
 /*              Pagination styles                  */
 /***************************************************/
-div.pagination {
-	padding: 3px;
-	margin: 3px;
+.gbPagination {
+	text-align:center;
 }
 
-div.pagination a {
+.gbPagination .pagination {
+	padding: 3px;
+	margin: 3px;
+	box-shadow: none; /*For twentyfifteen*/
+}
+
+.gbPagination .pagination a {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
 	border: 1px solid #888888;
 	text-decoration: none; /* no underline */
 	color: #888888;
 }
-div.pagination a:hover, div.pagination a:active {
+.gbPagination .pagination a:hover, .gbPagination .pagination a:active {
 	border: 1px solid #888888;
 	color: #000;
 }
-div.pagination span.current {
+.gbPagination .pagination span.current {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
 	border: 1px solid #888888;
@@ -188,7 +200,7 @@ div.pagination span.current {
 	background-color: #888888;
 	color: #FFF;
 }
-div.pagination span.disabled {
+.gbPagination .pagination span.disabled {
 	padding: 2px 5px 2px 5px;
 	margin: 2px;
 	border: 1px solid #CCC;
