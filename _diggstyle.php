@@ -27,7 +27,7 @@ function getPaginationString($page = 1, $totalitems, $limit = 10, $adjacents = 1
 	if($lastpage > 1)
 	{	
 		$pagination .= "<div class=\"pagination\"";
-		if($margin || $padding)
+		if(isset($margin) || isset($padding))
 		{
 			$pagination .= " style=\"";
 			if($margin)

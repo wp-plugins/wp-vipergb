@@ -18,8 +18,6 @@ function vgb_GetGuestbook( $opts=array() )
     $defaults = array(
         'entriesPerPg' => 10,       //Number if entries to show per page
         'reverseOrder' => false,    //Reverse the order of entries (oldest first)
-        'allowUploads' => false,    //Allow users to upload images
-        'maxImgSizKb'  => 50,       //Max uploadable image size (if allowUploads is set)
         'showBrowsers' => true,     //Show browser/OS icons in guestbook entries  
         'showFlags'    => true,     //Show national flags in guestbook entries (REQUIRES OZH IP2NATION)
         'hideCred'     => false,    //Omit "Powered by WP-ViperGB" (please don't though :))
@@ -331,24 +329,6 @@ function vgb_get_sign_pg($opts)
      <!-- EndText area section -->
      <?php endif; ?>
     </form>
-          
-    <?php
-    if( $opts['allowUploads'] ):
-      ?>
-      <!-- Image Upload section: -->  
-      <div id="gbSignUpload">  
-        <?php
-        /*ECU Code
-           update_option('ecu_max_file_size', $opts['maxImgSizKb']);
-           update_option('ecu_images_only', true);
-           $msg = sprintf(__("Add photo (max %dkb)", WPVGB_DOMAIN), $opts['maxImgSizKb']) . ":";
-           ecu_upload_form_core($msg);
-           ecu_upload_form_preview();
-		*/ 
-        ?>
-      </div>       
-      <!-- End Image Upload section -->
-    <?php endif;?>  
    </div>
    <?php
    

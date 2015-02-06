@@ -2,7 +2,6 @@
 
 //Set default options.
 add_option($opt_vgb_items_per_pg, 10);
-add_option($opt_vgb_max_upload_siz, 50);
 add_option($opt_vgb_no_anon_signers, false);
 add_option($opt_vgb_show_browsers, true);
 add_option($opt_vgb_show_flags, true);
@@ -37,8 +36,8 @@ function vgb_add_plugin_links($links, $file)
 function vgb_admin_page()
 {
     global $vgb_name, $vgb_homepage, $vgb_version;
-    global $opt_vgb_page, $opt_vgb_style, $opt_vgb_reverse, $opt_vgb_allow_upload;
-    global $opt_vgb_items_per_pg, $opt_vgb_max_upload_siz;
+    global $opt_vgb_page, $opt_vgb_style, $opt_vgb_reverse;
+    global $opt_vgb_items_per_pg;
 	global $opt_vgb_no_anon_signers;
     global $opt_vgb_show_browsers, $opt_vgb_show_flags, $opt_vgb_show_cred_link;
     global $opt_vgb_hidesponsor, $opt_vgb_digg_pagination;
@@ -50,14 +49,12 @@ function vgb_admin_page()
           update_option( $opt_vgb_page, esc_html($_POST[$opt_vgb_page] ));
           update_option( $opt_vgb_style, esc_html($_POST[$opt_vgb_style] ));
           update_option( $opt_vgb_items_per_pg, esc_html($_POST[$opt_vgb_items_per_pg] ));
-          update_option( $opt_vgb_reverse, esc_html($_POST[$opt_vgb_reverse] ));
-          update_option( $opt_vgb_allow_upload, esc_html($_POST[$opt_vgb_allow_upload] ));
-          update_option( $opt_vgb_max_upload_siz, esc_html($_POST[$opt_vgb_max_upload_siz] ));
-		  update_option( $opt_vgb_no_anon_signers, esc_html($_POST[$opt_vgb_no_anon_signers] ));
-          update_option( $opt_vgb_show_browsers, esc_html($_POST[$opt_vgb_show_browsers] ));
-          update_option( $opt_vgb_show_flags, esc_html($_POST[$opt_vgb_show_flags] ));
-          update_option( $opt_vgb_show_cred_link, esc_html($_POST[$opt_vgb_show_cred_link] ));
-		  update_option( $opt_vgb_digg_pagination, esc_html($_POST[$opt_vgb_digg_pagination] ));
+          update_option( $opt_vgb_reverse, esc_html(isset($_POST[$opt_vgb_reverse])?$_POST[$opt_vgb_reverse]:0 ));
+		  update_option( $opt_vgb_no_anon_signers, esc_html(isset($_POST[$opt_vgb_no_anon_signers])?$_POST[$opt_vgb_no_anon_signers]:0 ));
+          update_option( $opt_vgb_show_browsers, esc_html(isset($_POST[$opt_vgb_show_browsers])?$_POST[$opt_vgb_show_browsers]:0 ));
+          update_option( $opt_vgb_show_flags, esc_html(isset($_POST[$opt_vgb_show_flags])?$_POST[$opt_vgb_show_flags]:0 ));
+          update_option( $opt_vgb_show_cred_link, esc_html(isset($_POST[$opt_vgb_show_cred_link])?$_POST[$opt_vgb_show_cred_link]:0 ));
+		  update_option( $opt_vgb_digg_pagination, esc_html(isset($_POST[$opt_vgb_digg_pagination])?$_POST[$opt_vgb_digg_pagination]:0 ));
           ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
       }
       if( isset($_REQUEST[$opt_vgb_hidesponsor]) )
@@ -108,8 +105,6 @@ function vgb_admin_page()
         <input type="text" size="3" name="<?php echo $opt_vgb_items_per_pg?>" value="<?php echo get_option($opt_vgb_items_per_pg) ?>" /> <?php _e('Entries Per Page', WPVGB_DOMAIN)?><br />
 		<input type="checkbox" name="<?php echo $opt_vgb_digg_pagination?>" value="1" <?php echo get_option($opt_vgb_digg_pagination)?'checked="checked"':''?> /> <?php _e('Use Digg-style pagination', WPVGB_DOMAIN)?> (<?php echo sprintf(__("Please enable %s when using this option.", WPVGB_DOMAIN), "<a href='options-permalink.php' target='permalinks'>Pretty Permalinks</a>") ?>)<br />
         <input type="checkbox" name="<?php echo $opt_vgb_reverse?>" value="1" <?php echo get_option($opt_vgb_reverse)?'checked="checked"':''?> /> <?php _e('Reverse Order (list from oldest to newest)', WPVGB_DOMAIN)?><br />
-<!--ECU Code        <input type="checkbox" name="<?php echo $opt_vgb_allow_upload?>" value="1" <?php echo get_option($opt_vgb_allow_upload)?'checked="checked"':''?> /> <?php _e('Allow Image Uploads', WPVGB_DOMAIN)?><br /> -->
-<!--ECU Code        <input type="text" size="3" name="<?php echo $opt_vgb_max_upload_siz?>" value="<?php echo get_option($opt_vgb_max_upload_siz) ?>" /> <?php _e('Max Image Filesize (kb)', WPVGB_DOMAIN)?><br /><br /> -->
         <input type="checkbox" name="<?php echo $opt_vgb_no_anon_signers?>" value="1" <?php echo get_option($opt_vgb_no_anon_signers)?'checked="checked"':''?> /> <?php _e('Don\'t allow anonymous signatures (aka only allow registered users)',WPVGB_DOMAIN)?><br />
         <input type="checkbox" name="<?php echo $opt_vgb_show_browsers?>" value="1" <?php echo get_option($opt_vgb_show_browsers)?'checked="checked"':''?> /> <?php _e('Show Browser &amp; OS Icons',WPVGB_DOMAIN)?><br />
         <input type="checkbox" name="<?php echo $opt_vgb_show_flags?>" value="1" <?php echo get_option($opt_vgb_show_flags)?'checked="checked"':''?> /> <?php printf(__("Show Flag Icons (Requires %s)", WPVGB_DOMAIN), '<a href="http://wordpress.org/extend/plugins/ozhs-ip-to-nation/">Ozh\'s IP To Nation</a>')?><br />
