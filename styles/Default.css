@@ -35,7 +35,7 @@
     font-size: 80%;
 }
 
-.gbEntry{
+.gbEntry, .entry-content .gbEntry{
     width:100%;
     padding:0;
     margin-bottom: 7px;
@@ -43,13 +43,24 @@
     border-spacing:0;
 }
 
-.gbEntryTop{
+.gbEntryTop, .entry-content .gbEntryTop{
+    padding: 0 2px;
     width:80%
+}
+
+/*For twentyfourteen, which has a ridiculously thin content area*/
+#main-content #primary #content .hentry .entry-content .gbEntryTop{
+    width:73%;
+}
+/*For twentyfifteen, and its overly-thin content area*/
+#content #primary #main .hentry .entry-content .gbEntryTop {
+    width:77%;
 }
 
 .gbEntryLeft table{
     border:0;
     width:100%;
+    table-layout: auto;
 }
 
 .gbEntryLeft td{
@@ -61,18 +72,24 @@
 
 .gbEntryLeft .rightSide{
     text-align:right;
+    padding: 0;
 }
 
 .gbEntryLeft .leftSide{
     text-align:left;
+    padding: 0;
 }
 
-.gbEntryLeft{
+.gbEntryLeft, .entry-content .gbEntryLeft{
     height:100%;
     padding:0 3px;
     vertical-align:top;
     text-align:center;
     border-right:1px solid #888888;
+}
+
+.entry-content .gbEntryBottom{
+    padding: 0 2px;
 }
 
 .gbEntryBottom img, .gbEntryTop img{
@@ -81,7 +98,7 @@
     padding:0;
 }
 
-.gbEntryContent{
+.gbEntryContent, .entry-content .gbEntryContent{
     padding:4px;
     border-top:1px solid #888888;
     border-bottom:1px solid #888888;
@@ -122,6 +139,14 @@
 #content #primary #main .hentry .entry-content #gbSignWrap {
 	width: 100%;
 	padding: 0;
+}
+#content #primary #main .hentry .entry-content #gbEntriesWrap{
+    font-size: 80%;
+}
+
+/*Another issue created by twentyfifteen*/
+#gbEntriesWrap *{
+    box-sizing: content-box;
 }
 
 

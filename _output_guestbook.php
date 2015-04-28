@@ -170,7 +170,7 @@ function vgb_get_listing_pg($opts)
       <td class="gbEntryLeft" rowspan="3">
        <table class="nocellspacing">
         <tr>
-         <td class="leftSide"><?php _e('EntryNo', WPVGB_DOMAIN)?>:</td>
+         <td class="leftSide"><?php _e('Entry#', WPVGB_DOMAIN)?>:</td>
          <td class="rightSide">
           <?php
               if($opts['reverseOrder'])   echo $commentTotal - ($commentCounter--) + 1;
