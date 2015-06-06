@@ -86,7 +86,7 @@ function vgb_get_header( $itemTotal, $entriesPerPg, $diggPagination )
     $retVal .= __('Show Guestbook', WPVGB_DOMAIN);
     if( !$isListingPg ) $retVal .= "</a>";
     $retVal .= " | ";
-    if( $isListingPg ) $retVal .= "<a href=\"".htmlspecialchars(add_query_arg(VB_SIGN_PG_ARG, 1))."\">";
+    if( $isListingPg ) $retVal .= "<a href=\"". esc_url(add_query_arg(VB_SIGN_PG_ARG, 1))."\">";
     $retVal .= __('Sign Guestbook', WPVGB_DOMAIN);
     if( $isListingPg ) $retVal .= "</a>";
     $retVal .= "</div>";
@@ -115,7 +115,7 @@ function vgb_get_header( $itemTotal, $entriesPerPg, $diggPagination )
             	for( $i = 1; $i <= $maxPages; $i++ )
             	{
                 	if( $curPage == $i || (!$curPage && $i==1) ) $retVal .= "(" . $i . ") ";
-                	else                                         $retVal .= "<a href=\"".htmlspecialchars(add_query_arg(VB_PAGED_ARG, $i))."\">$i</a> ";
+                	else                                         $retVal .= "<a href=\"".esc_url(add_query_arg(VB_PAGED_ARG, $i))."\">$i</a> ";
             	}
 			}
 			//Digg-style paginated nav links
