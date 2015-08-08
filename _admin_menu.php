@@ -56,6 +56,11 @@ function vgb_admin_page()
           update_option( $opt_vgb_show_cred_link, esc_html(isset($_POST[$opt_vgb_show_cred_link])?$_POST[$opt_vgb_show_cred_link]:0 ));
 		  update_option( $opt_vgb_digg_pagination, esc_html(isset($_POST[$opt_vgb_digg_pagination])?$_POST[$opt_vgb_digg_pagination]:0 ));
           ?><div class="updated"><p><strong><?php _e('Options saved.', WPVGB_DOMAIN ); ?></strong></p></div><?php
+          if(!comments_open(get_option($opt_vgb_page)))
+          {
+              wp_update_post(array('ID'=>get_option($opt_vgb_page), 'comment_status'=>'open'));
+              ?><div class="error"><p><strong><?php _e('Notice: Comments were disabled for the Guestbook Page you selected.  They\'ve now been automatically enabled, as required for your guestbook to function.', WPVGB_DOMAIN ); ?></strong></p></div><?php
+          }
       }
       if( isset($_REQUEST[$opt_vgb_hidesponsor]) )
           update_option($opt_vgb_hidesponsor, esc_html($_REQUEST[$opt_vgb_hidesponsor]));

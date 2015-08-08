@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP-ViperGB\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-28 12:35-0800\n"
-"PO-Revision-Date: 2015-04-28 12:35-0800\n"
+"POT-Creation-Date: 2015-08-08 12:17-0800\n"
+"PO-Revision-Date: 2015-08-08 12:17-0800\n"
 "Last-Translator: Justin Klein <justin@justin-klein.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -24,82 +24,88 @@ msgstr ""
 msgid "Options saved."
 msgstr ""
 
-#: ../_admin_menu.php:64
+#: ../_admin_menu.php:62
+msgid ""
+"Notice: Comments were disabled for the Guestbook Page you selected.  They've "
+"now been automatically enabled, as required for your guestbook to function."
+msgstr ""
+
+#: ../_admin_menu.php:69
 msgid "WP-ViperGB Options"
 msgstr ""
 
-#: ../_admin_menu.php:66
+#: ../_admin_menu.php:71
 msgid "Manage Entries"
 msgstr ""
 
-#: ../_admin_menu.php:70
+#: ../_admin_menu.php:75
 msgid ""
 "To add a Guestbook to your blog, simply create a new page, select it in the "
 "first combobox below, and click \"Save.\""
 msgstr ""
 
-#: ../_admin_menu.php:77
+#: ../_admin_menu.php:82
 msgid "Main Settings"
 msgstr ""
 
-#: ../_admin_menu.php:79
+#: ../_admin_menu.php:84
 msgid "Guestbook Page"
 msgstr ""
 
-#: ../_admin_menu.php:90
+#: ../_admin_menu.php:95
 msgid "Guestbook Style"
 msgstr ""
 
-#: ../_admin_menu.php:104
+#: ../_admin_menu.php:109
 msgid "Extra Settings"
 msgstr ""
 
-#: ../_admin_menu.php:105
+#: ../_admin_menu.php:110
 msgid "Entries Per Page"
 msgstr ""
 
-#: ../_admin_menu.php:106
+#: ../_admin_menu.php:111
 msgid "Use Digg-style pagination"
 msgstr ""
 
-#: ../_admin_menu.php:106
+#: ../_admin_menu.php:111
 #, php-format
 msgid "Please enable %s when using this option."
 msgstr ""
 
-#: ../_admin_menu.php:107
+#: ../_admin_menu.php:112
 msgid "Reverse Order (list from oldest to newest)"
 msgstr ""
 
-#: ../_admin_menu.php:108
+#: ../_admin_menu.php:113
 msgid "Don't allow anonymous signatures (aka only allow registered users)"
 msgstr ""
 
-#: ../_admin_menu.php:109
+#: ../_admin_menu.php:114
 msgid "Show Browser &amp; OS Icons"
 msgstr ""
 
-#: ../_admin_menu.php:110
+#: ../_admin_menu.php:115
 #, php-format
 msgid "Show Flag Icons (Requires %s)"
 msgstr ""
 
-#: ../_admin_menu.php:111
+#: ../_admin_menu.php:116
 #, php-format
 msgid ""
 "Include a Link to the <a href=\"%s\">plugin homepage</a> (optional, but much "
 "appreciated)"
 msgstr ""
 
-#: ../_admin_menu.php:113
+#: ../_admin_menu.php:118
 msgid "Save"
 msgstr ""
 
-#: ../_admin_menu.php:117
+#: ../_admin_menu.php:122
 msgid "Development"
 msgstr ""
 
-#: ../_admin_menu.php:118
+#: ../_admin_menu.php:123
 msgid ""
 "Many hours have gone into making this plugin as clean and easy to use as "
 "possible. Although I offer it to you freely, please keep in mind that each "
@@ -108,29 +114,29 @@ msgid ""
 "appreciated :)"
 msgstr ""
 
-#: ../_admin_menu.php:129
+#: ../_admin_menu.php:134
 msgid "Credits"
 msgstr ""
 
-#: ../_admin_menu.php:130
+#: ../_admin_menu.php:135
 msgid ""
 "WP-ViperGB takes advantage of code from several other plugins.  These are:"
 msgstr ""
 
-#: ../_admin_menu.php:132
+#: ../_admin_menu.php:137
 msgid ""
 "Allow users to embed images in their guestbook entries. <i>This "
 "functionality is included by default, but must be explicitly enabled above.</"
 "i>"
 msgstr ""
 
-#: ../_admin_menu.php:133
+#: ../_admin_menu.php:138
 msgid ""
 "Show a browser and operating system icon in each visitor's guestbook entry.  "
 "<i>This functionality is included by default.</i>"
 msgstr ""
 
-#: ../_admin_menu.php:134
+#: ../_admin_menu.php:139
 msgid ""
 "Show a national flag in each visitor's guestbook entry.  <i>This plugin must "
 "be installed separately.</i>"
